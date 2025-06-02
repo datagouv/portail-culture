@@ -40,7 +40,7 @@ Filtrage par ID de l’organisation
 
 Limitation à 10 résultats
 
-Tempralité de mise à jour : quotidienne
+Temporalité de mise à jour : quotidienne
 
 
 #### Request URL
@@ -90,7 +90,7 @@ Les 10 jeux de données les plus réutilisés
 - Filtrage par ID de l’organisation
 - Limitation à 10 résultats
 
-Tempralité de mise à jour : mensuelle
+Temporalité de mise à jour : mensuelle
 
 #### Request URL
 ```
