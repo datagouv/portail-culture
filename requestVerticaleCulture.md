@@ -40,6 +40,9 @@ Filtrage par ID de l’organisation
 
 Limitation à 10 résultats
 
+Tempralité de mise à jour : quotidienne
+
+
 #### Request URL
 ```
 https://www.data.gouv.fr/api/1/datasets/?sort=-created&page=1&page_size=10&organization=534fff91a3a7292c64a77f73
@@ -87,6 +90,7 @@ Les 10 jeux de données les plus réutilisés
 - Filtrage par ID de l’organisation
 - Limitation à 10 résultats
 
+Tempralité de mise à jour : mensuelle
 
 #### Request URL
 ```
