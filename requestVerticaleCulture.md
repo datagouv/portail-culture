@@ -4,6 +4,9 @@ Ce document a pour objectif de documenter les requêtes API utilisées dans le c
 
 URL du site en préproduction : culture.preprod.data.gouv.fr
 
+Info dépots Github : 
+Officiel pour la gestion des verticales : https://github.com/opendatateam/udata-front-kit
+
 ### Info conception des requêtes
 
 - ID Organization Ministère de la Culture : 534fff91a3a7292c64a77f73
