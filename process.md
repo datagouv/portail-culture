@@ -1,0 +1,42 @@
+verticale-culture/
+├── data/                                 # Données dynamiques issues des APIs
+│   └── blocs/
+│       ├── nouveaux-datasets.json        # Jeux récemment publiés
+│       └── top-reutilisations.json       # Jeux les plus réutilisés
+│
+├── configs/
+│   └── culture/
+│       └── config.yaml                   # Fichier principal utilisé par le front (modifié automatiquement) avec une section dédiée aux blocs l'automatisés.
+│
+├── scripts/                              # Scripts Python de collecte + injection
+│   ├── fetch_nouveaux_datasets.py
+│   ├── fetch_top_reutilisations.py
+│   └── inject_donnees_dans_yaml.py
+│
+├── public/
+│   └── culture/
+│       └── pages/                        # Surcharge éventuelle de templates dans udata-front-kit (faut-il créer une page pour la gestion de la page d'accueil)
+│           └── (à créer si besoin)       # Est-il possible d'utiliser html ? pour simplifier la gestion des pages ?  
+│
+├── src/
+│   └── custom/
+│       └── culture/
+│           ├── BlocNouveauxJeux.vue      # Composant Vue dynamique (à créer)
+│           └── BlocTopReutilisations.vue # Composant Vue dynamique (à créer)
+│
+├── .gitlab-ci.yml                        # Pipeline d'automatisation (cron, injection, build)
+├── README.md                             # Documentation principale
+└── docs/
+    ├── architecture.md                   # Explication du fonctionnement
+    └── specifications-blocs.md           # Détail des formats, requêtes et fréquences
+│   └── custom/
+│       └── culture/
+│           ├── BlocNouveauxJeux.vue      # Composant Vue dynamique pour les nouveaux jeux
+│           └── BlocTopReutilisations.vue # Composant Vue dynamique pour les réutilisations
+│
+├── .gitlab-ci.yml                        # Pipeline CI : cron, scripts Python, mise à jour du YAML, build front
+├── README.md                             # Documentation générale (structure, usage, mise à jour)
+└── docs/
+    ├── architecture.md                   # Détail des flux : data → JSON → YAML → front
+    └── specifications-blocs.md           # Requêtes API, structure des données, logique d’injection
+
