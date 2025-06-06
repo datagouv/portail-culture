@@ -1,3 +1,6 @@
+
+
+
 verticale-culture/
 ├── data/                                 # Données dynamiques issues des APIs
 │   └── blocs/
