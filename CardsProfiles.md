@@ -1,6 +1,6 @@
 # Intégration de section en HTML directement au seim du Yaml
 
-Exemple 
+Exemple : https://github.com/datagouv/portail-culture/blob/Documentation/CardsProfils.png
 ```
 - title:
         content: >-
