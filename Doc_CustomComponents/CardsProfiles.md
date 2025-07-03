@@ -1,6 +1,8 @@
 # Intégration de section en HTML directement au seim du Yaml
 
-Exemple : https://github.com/datagouv/portail-culture/blob/Documentation/CardsProfils.png
+Exemple d'un ajout d'une section html directement au sein du Yaml :
+![Card_image](https://github.com/datagouv/portail-culture/blob/Documentation/Doc_CustomComponents/Doc_CostomAssets/CardsProfils.png)
+
 ```
 - title:
         content: >-
