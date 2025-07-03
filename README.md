@@ -5,7 +5,7 @@ Documentation et prototypage pour la verticale Culture du portail de données ou
 ## 🌐 Environnements
 Production : https://culture.data.gouv.fr
 
-Préproduction : https://culture.preprod.data.gouv.fr
+Préproduction : https://culture.preprod.data.gouv.fr | https://github.com/opendatateam/udata-front-kit/tree/culture-preprod
 
 ## 🎯 Objectif du dépôt
 Ce dépôt centralise les éléments de documentation et les ébauches de composants utilisés pour construire et enrichir la page d’accueil de la verticale Culture, en cohérence avec le Design System de l’État.
