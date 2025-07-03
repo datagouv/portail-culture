@@ -16,13 +16,11 @@ Il accompagne le travail UX/UI mené dans le cadre de la mission "Circulation et
 Doc_CustomComponents/
 Ce répertoire contient :
 
-## ✅ Des ébauches de sections et blocs pour la page d’accueil, au format Vue.js (.vue) ou HTML/CSS (.html)
+Des exemples et ébauches de sections et blocs pour la page d’accueil, au format Vue.js (.vue) ou HTML/CSS (.html)
 
-## 🧩 Des exemples de composants modulaires intégrables dans le portail (hero, mise en avant de jeux de données, cas d’usage par public cible, etc.)
+Un sous-répertoire d’illustrations et images associées aux blocs réalisés (exemples de visuels illustratifs ou fonds de blocs)
 
-##🖼️ Un sous-répertoire d’illustrations et images associées aux blocs réalisés (exemples de visuels illustratifs ou fonds de blocs)
-
- requestVerticaleCulture.md
+requestVerticaleCulture.md
 Documente les requêtes API utilisées pour alimenter dynamiquement la verticale Culture :
 
 Requêtes vers l’API uData pour récupérer jeux de données, réutilisations, producteurs
@@ -30,8 +28,6 @@ Requêtes vers l’API uData pour récupérer jeux de données, réutilisations,
 Filtres et paramètres spécifiques utilisés (thématique Culture, tags, tri, pagination)
 
 Requêtes typiques utilisées dans les blocs du portail (ex. : top datasets, dernières publications, visualisations associées)
-
-
 
 ## 🧪 Usage conseillé
 Ce dépôt peut être utilisé pour :
