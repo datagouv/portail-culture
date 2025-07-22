@@ -47,18 +47,19 @@ via YAML + composant custom vue
 - id: bloc_thematiques
   title: Explorer par thématique
   content: |
-    <div class="fr-tags-group" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-      <a href="/datasets?tags=archives" class="fr-tag" aria-label="Dossier d’archives">🗃️ Archives</a>
-      <a href="/datasets?tags=architecture" class="fr-tag" aria-label="Architecture et construction">🏗️ Architecture</a>
-      <a href="/datasets?tags=arts-plastiques" class="fr-tag" aria-label="Arts plastiques">🎨 Arts plastiques</a>
-      <a href="/datasets?tags=cinema" class="fr-tag" aria-label="Cinéma">🎬 Cinéma</a>
-      <a href="/datasets?tags=spectacle-vivant" class="fr-tag" aria-label="Spectacle vivant">🎭 Spectacle vivant</a>
-      <a href="/datasets?tags=livre" class="fr-tag" aria-label="Livre et lecture">📚 Livre & lecture</a>
-      <a href="/datasets?tags=musique" class="fr-tag" aria-label="Musique">🎵 Musique</a>
-      <a href="/datasets?tags=presse" class="fr-tag" aria-label="Presse écrite">📰 Presse écrite</a>
-      <a href="/datasets?tags=musees" class="fr-tag" aria-label="Musées">🖼️ Musées</a>
-      <a href="/datasets?tags=langue" class="fr-tag" aria-label="Langue et communication">💬 Langue</a>
-      <a href="/datasets?tags=industries-culturelles" class="fr-tag" aria-label="Industries culturelles et créatives">💡 Industries culturelles</a>
-    </div>
+    <ul class="fr-tags-group">
+      <li><a class="fr-tag" href="/datasets?tags=archives" aria-label="Dossier d’archives">🗃️ Archives</a></li>
+      <li><a class="fr-tag" href="/datasets?tags=architecture" aria-label="Architecture et construction">🏗️ Architecture</a></li>
+      <li><a class="fr-tag" href="/datasets?tags=arts-plastiques" aria-label="Arts plastiques">🎨 Arts plastiques</a></li>
+      <li><a class="fr-tag" href="/datasets?tags=cinema" aria-label="Cinéma">🎬 Cinéma</a></li>
+      <li><a class="fr-tag" href="/datasets?tags=spectacle-vivant" aria-label="Spectacle vivant">🎭 Spectacle vivant</a></li>
+      <li><a class="fr-tag" href="/datasets?tags=livre" aria-label="Livre et lecture">📚 Livre & lecture</a></li>
+      <li><a class="fr-tag" href="/datasets?tags=musique" aria-label="Musique">🎵 Musique</a></li>
+      <li><a class="fr-tag" href="/datasets?tags=presse" aria-label="Presse écrite">📰 Presse écrite</a></li>
+      <li><a class="fr-tag" href="/datasets?tags=musees" aria-label="Musées">🖼️ Musées</a></li>
+      <li><a class="fr-tag" href="/datasets?tags=langue" aria-label="Langue et communication">💬 Langue</a></li>
+      <li><a class="fr-tag" href="/datasets?tags=industries-culturelles" aria-label="Industries culturelles et créatives">💡 Industries culturelles</a></li>
+    </ul>
+
 ```
 
