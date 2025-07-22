@@ -1,6 +1,10 @@
 # Jeux de données par Thématiques
 
 via YAML et html
+
+Exemple d'un ajout d'une section html directement au sein du Yaml :
+![Card_image](https://github.com/datagouv/portail-culture/blob/Documentation/Doc_CustomComponents/Doc_CostomAssets/CardsProfils.png)
+
 ```
 - title: Explorer par thématique
         id: bloc_thematiques
