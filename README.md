@@ -1,4 +1,4 @@
-<img width="457" height="56" alt="image" src="https://github.com/user-attachments/assets/7a9cb552-76af-4620-9471-d5cb4570e9c8" /># Transversale des données culturelles
+# Transversale des données culturelles
 
 Documentation et prototypage pour la verticale Culture du portail de données ouvertes data.gouv.fr.
 
