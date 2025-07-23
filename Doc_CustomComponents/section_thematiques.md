@@ -1,7 +1,5 @@
-# Navigation par thématiques
-Id : section_thematiques
-
 # Jeux de données par Thématiques
+Id : section_thematiques
 
 Exemple d'un ajout d'une section html directement au sein du Yaml :
 ![Card_image](https://github.com/datagouv/portail-culture/blob/Documentation/Doc_CustomComponents/Doc_CustomAssets/bloc_thematiques.png)
