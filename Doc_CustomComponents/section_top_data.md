@@ -11,8 +11,24 @@ Automatisé, les liens des cards sont des requêtes de l'API avec un tri dynamiq
 Actualisation dynamique
 
 
-| Élément                  | Emoji | Type de tri/API    | Objectif                                      | UX/UI                                                        |                                     
-|:------------------------ |:----- |:------------------ |:--------------------------------------------- |:------------------------------------------------------------ |
-| Jeux les plus consultés  | 🔥    | `sort=-views`      | Mettre en avant les contenus à forte audience | Bon point d’entrée. Limitation à 3 cards évite la surcharge. |
-| Jeux les plus réutilisés | ♻️    | `sort=-reuses`     | Valoriser les rétuilisation et données les plus reprises       | Valorise les tendances actuelles            |
-| Nouveaux jeux publiés    | 🆕    | `sort=-created_at` | Montrer les dernières publications            | Permet la découverte de nouveautés                           |
+## Contenu
+- titre de la section : 
+- chaque carte présente :
+    - le titre : exeemple "🔥 Explorez les données en vue"
+    - une image (disponible au sein du répertoire asset
+    - une description (description)
+    - Redirection vers résulttats de la requête API (
+
+
+Composant DSFR :  
+
+Type : Card ou Card contenu enrichi
+Style : fr-card, fr-card--horizontal, fr-card—sm
+<img width="647" height="455" alt="image" src="https://github.com/user-attachments/assets/6e748479-6868-4fed-8cc3-9db6951360ed" />
+
+
+| Élément                  | Emoji | Type de tri/API    |Nombre| Objectif                                      | UX/UI                                                        |                                     
+|:------------------------ |:----- |:------------------ |:----- |:--------------------------------------------- |:------------------------------------------------------------ |
+| Jeux les plus consultés  | 🔥    | `sort=-views`      |20| Mettre en avant les contenus à forte audience | Bon point d’entrée. Limitation à 3 cards évite la surcharge. |
+| Jeux les plus réutilisés | ♻️    | `sort=-reuses`     |20| Valoriser les rétuilisation et données les plus reprises       | Valorise les tendances actuelles            |
+| Nouveaux jeux publiés    | 🆕    | `sort=-created_at` |20| Montrer les dernières publications            | Permet la découverte de nouveautés                           |
