@@ -1,4 +1,4 @@
-# 🔥 Explorez les données en vue
+# 🔥 Découvrez les données phares
 ID : section_top_data
 
 ## Objectif
@@ -14,7 +14,7 @@ Actualisation dynamique
 ## Contenu
 - titre de la section : 
 - chaque carte présente :
-    - le titre : exeemple "🔥 Explorez les données en vue"
+    - le titre : exeemple "Découvrez les données phares"
     - une image (disponible au sein du répertoire asset
     - une description (description)
     - Redirection vers résultats de la requête API
