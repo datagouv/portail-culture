@@ -27,8 +27,8 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
 
 ## Spécifications des cards
 
-| Élément                  | Emoji | Requête API        | Nombre | Objectif                                               | UX/UI                                                                 |
-| :----------------------- | :---- | :----------------- | :----- | :----------------------------------------------------- | :-------------------------------------------------------------------- |
-| Jeux les plus consultés  | 🔥    | `sort=-views`      | 20     | Mettre en avant les contenus les plus populaires       | Bon point d’entrée. 3 cards affichées → évite la surcharge cognitive. |
-| Jeux les plus réutilisés | ♻️    | `sort=-reuses`     | 20     | Valoriser les jeux fréquemment repris ou remixés       | Met en avant la richesse des réutilisations.                          |
-| Nouveaux jeux publiés    | 🆕    | `sort=-created_at` | 20     | Montrer les dernières publications de données ouvertes | Permet la découverte des nouveautés.                                  |
+| Élément                  | Emoji | Requête API        | Nombre | Objectif                                               |
+| :----------------------- | :---- | :----------------- | :----- | :----------------------------------------------------- |
+| Jeux les plus consultés  | 🔥    | `sort=-views`      | 20     | Mettre en avant les contenus les plus populaires       |
+| Jeux les plus réutilisés | ♻️    | `sort=-reuses`     | 20     | Valoriser les jeux fréquemment repris ou remixés       | 
+| Nouveaux jeux publiés    | 🆕    | `sort=-created_at` | 20     | Montrer les dernières publications de données ouvertes | 
