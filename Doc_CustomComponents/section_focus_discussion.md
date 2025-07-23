@@ -1,68 +1,60 @@
-# section_focus_discussion
-ID : section_focus_discussion
+# section_focus_discussion  
+ID : section_focus_discussion  
 
-## Objectif
-Mettre en valeur les jeux de données les plus consultés sur la plateforme, afin d’encourager l’exploration des ressources jugées pertinentes ou utiles par la communauté. Ce bloc permet de valoriser les données à fort impact et d'orienter les utilisateurs vers les contenus les plus visités.
+## Objectif  
+Offrir une respiration éditoriale en valorisant des jeux de données sélectionnés manuellement ou semi-automatiquement (jeu du mois, données structurantes), tout en favorisant les échanges autour des données culturelles via des liens vers la communauté. Ce bloc renforce l'engagement et la compréhension en croisant contenus phares et interactions.
 
-## Automatisation
-Automatisé, les liens des cards sont des requêtes de l'API avec un tri dynamique selon nombre de vues, réutilisations
+## Automatisation  
+Partiellement automatisé : certaines cards sont éditoriales (jeu du mois), d'autres issues de tags ou liens dynamiques.
 
-## Périodicité d’actualisation
-Actualisation dynamique
+## Périodicité d’actualisation  
+Mensuelle pour l’éditorial (jeu du mois)  
+Dynamique pour les autres sources
 
+## Contenu  
+- titre de la section :  
+- chaque carte présente :  
+  - un titre (exemple : "💬 Participez aux discussions")  
+  - une image (disponible au sein du répertoire asset)  
+  - une description  
+  - redirection vers la source (page jeu, liste ou forum)
 
-## Contenu
-- titre de la section : 
-- chaque carte présente :
-    - le titre : exeemple "Découvrez les données phares"
-    - une image (disponible au sein du répertoire asset
-    - une description (description)
-    - Redirection vers résultats de la requête API
-
-
-## Composant DSFR :  
-
-Type : Card ou Card contenu enrichi
-Style : fr-card, fr-card--horizontal, fr-card—sm
+## Composant DSFR  
+Type : Card ou Card contenu enrichi  
+Style : `fr-card`, `fr-card--horizontal`, `fr-card--sm`
 
 ## Spécifications des cards
 
-| Élément                  | Emoji | Requête API        | Nombre | Objectif                                               |
-| :----------------------- | :---- | :----------------- | :----- | :----------------------------------------------------- |
-| Jeux les plus consultés  | 🔥    | `sort=-views`      | 20     | Mettre en avant les contenus les plus populaires       |
-| Jeux les plus réutilisés | ♻️    | `sort=-reuses`     | 20     | Valoriser les jeux fréquemment repris ou remixés       | 
-| Nouveaux jeux publiés    | 🆕    | `sort=-created_at` | 20     | Montrer les dernières publications de données ouvertes | 
+| Élément               | Emoji | Type de source                                                            | Nombre   | Objectif                                               |
+|-----------------------|:-----:|----------------------------------------------------------------------------|----------|--------------------------------------------------------|
+| Jeu du mois           | ✨     | Éditorial / semi-automatisé                                               | 1        | Donner un coup de projecteur mensuel                  |
+| Données de référence  | 🧽     | `tag=base-reference`                                                      | illimité | Mettre en avant les bases structurantes du ministère  |
+| Dernières discussions | 💬     | [forum.data.gouv.fr/tag/culture](https://forum.data.gouv.fr/tag/culture) | -        | Créer du lien avec la communauté et ses usages réels  |
 
+---
 
+## Code YAML
 
-| Élément               | Emoji | Type de source                                                           |Nombre | Objectif                                        |
-| --------------------- | ----- | ------------------------------------------------------------------------ | :----- | ----------------------------------------------- | 
-| Jeu du mois           | ✨     | Éditorial / semi-automatisé                                              |1     |  Donner un coup de projecteur mensuel           | 
-| Données de référence  | 🧽    | `tag=base-reference`                                                     | illimité     |  Mettre en avant les bases structurantes  |
-| Dernières discussions | 💬    | [forum.data.gouv.fr/tag/culture](https://forum.data.gouv.fr/tag/culture) | -     | Lien avec la communauté et questions fréquentes | 
-
-
-## Code Yaml
-```
-- title: Découvrez les données phares
-  id: section_top_data
+```yaml
+- title: Focus & discussions
+  id: section_focus_discussion
   content:
     sub_section_datasets:
     sub_section_cards:
       title:
       cards:
-        - name: '🔥 Jeux les plus consultés'
-          description: 'Découvrez les jeux les plus populaires sur la plateforme, en fonction du nombre de vues.'
-          url: 'datasets?sort=-views'
-          image_url: '/culture/assets/patrimoine.png'
-        - name: '♻️ Jeux les plus réutilisés'
-          description: 'Explorez les jeux de données les plus réutilisés par la communauté.'
-          url: 'datasets?sort=-reuses'
-          image_url: '/culture/assets/audiovisuel.png'
-        - name: '🆕 Nouveaux jeux publiés'
-          description: 'Parcourez les nouveaux jeux de données publiés sur la plateforme.'
-          url: 'datasets?sort=-created_at'
-          image_url: '/culture/assets/musee.png'
+        - name: '✨ Jeu du mois'
+          description: 'Chaque mois, découvrez un jeu de données mis à l’honneur pour sa pertinence ou son impact.'
+          url: '/datasets/jeu-du-mois'
+          image_url: '/culture/assets/jeu_mois.png'
+        - name: '🧽 Données de référence'
+          description: 'Explorez les bases de données structurantes du ministère de la Culture.'
+          url: 'datasets?tag=base-reference'
+          image_url: '/culture/assets/bases_reference.png'
+        - name: '💬 Discussions en cours'
+          description: 'Participez aux échanges autour des données culturelles sur le forum.'
+          url: 'https://forum.data.gouv.fr/tag/culture'
+          image_url: '/culture/assets/forum.png'
     sub_section_tiles:
     sub_section_buttons:
 ```
