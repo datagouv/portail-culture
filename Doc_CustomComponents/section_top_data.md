@@ -1,5 +1,5 @@
-# section_top_data
-
+# À explorer en priorité
+ID : section_top_data
 
 ## Objectif
 Mettre en valeur les jeux de données les plus consultés sur la plateforme, afin d’encourager l’exploration des ressources jugées pertinentes ou utiles par la communauté. Ce bloc permet de valoriser les données à fort impact et d'orienter les utilisateurs vers les contenus les plus visités.
@@ -17,7 +17,7 @@ Actualisation dynamique
     - le titre : exeemple "🔥 Explorez les données en vue"
     - une image (disponible au sein du répertoire asset
     - une description (description)
-    - Redirection vers résulttats de la requête API (
+    - Redirection vers résultats de la requête API
 
 
 ## Composant DSFR :  
