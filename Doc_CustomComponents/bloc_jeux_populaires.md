@@ -7,26 +7,26 @@ Mettre en valeur les jeux de données les plus consultés sur la plateforme, afi
 ## Gestion
 - automatisée, basée sur les statistiques de consultation de data.gouv.fr (via API). Tri dynamique selon la popularité : nombre de vues, téléchargements ou interactions.
 
-## Périodicité d’actualisation : 
+## Périodicité d’actualisation 
 - actualisation mensuelle
 
-## Composant DSFR : 
+## Composant DSFR
 - Type : Card ou Card contenu enrichi
 - Style : fr-card, fr-card--horizontal, fr-card—sm
 - Modèle d’intégration : composant custom vue alimenté par un fichier .json (préchargé via script/API)
   - https://vue-ds.fr/composants/DsfrCard
   - https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/carte
 
-## Fonctionnement :
+## Fonctionnement
 Chaque carte présente :
 - le titre du jeu de données (title)
 - un extrait de sa description (description)
 - (option en attente) le nom producteur (administration, établissement, collectivité)
-- un bouton ou lien "→ Voir le jeu de données« 
+- un bouton ou lien → Voir le jeu de données
 - Redirection vers l’URL du jeu sur data.culture.gouv.fr.
 - Un bouton sous le bloc permet l’accès aux jeux via tri sur views
 
-## Spécifications de la requête :
+## Spécifications de la requête
 - Tri : décroissant sur le nombre de réutilisations
 sort=-views
 - Filtrage : par ID d’organisation (ministère de la Culture) organization=534fff91a3a7292c64a77f73
