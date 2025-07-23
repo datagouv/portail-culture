@@ -26,5 +26,5 @@ Colonne gauche
 ## Composant DSFR
 https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/zone-d-expression-visuelle/design-de-la-zone-d-expression-visuelle 
 https://www.systeme-de-design.gouv.fr/v1.14/asset/component/composition/design/variation/do-7.png
-![Card_image](https://github.com/datagouv/portail-culture/blob/Documentation/Doc_CustomComponents/Doc_CustomAssets/GeoDataPatrimoine.png)
+![Card_image](https://github.com/datagouv/portail-culture/blob/Documentation/Doc_CustomComponents/Doc_CustomAssets/Exemple_reutilisation_phare.png?raw=true)
 
