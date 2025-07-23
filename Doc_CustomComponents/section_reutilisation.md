@@ -14,7 +14,8 @@ Mensuelle
   - Colonne droite
     - titre section : non
     - titre : Journées Européennes du patrimoine 
-    - paragragphe : "Réutilisation phare du mois Cartes.gouv / IGN
+    - sous-titre : Réutilisation phare du mois
+    - paragraphe : "Cartes.gouv / IGN
       A l’occasion des journées européennes du patrimoine, découvrez les lieux avec cartes.gouv.fr"
     - Réalisé à partir des données ouvertes (lien vers jeu de données)
     - Bouton : "Découvrez l’application IGN - Cartes" lien vers application
