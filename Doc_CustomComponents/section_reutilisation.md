@@ -21,7 +21,7 @@ Mensuelle
     - Bouton : "Découvrez l’application IGN - Cartes" lien vers application
 
 Colonne gauche
-  - image (hébergement au sein du repertoire assets)
+  - image (hébergement au sein du repertoire assets) : pour test : https://github.com/datagouv/portail-culture/blob/Documentation/Doc_CustomComponents/Doc_CustomAssets/GeoDataPatrimoine.png
 
 ## Composant DSFR
 https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/zone-d-expression-visuelle/design-de-la-zone-d-expression-visuelle 
