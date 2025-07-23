@@ -11,7 +11,7 @@ Automatisé, les liens des cards sont des requêtes de l'API avec un tri dynamiq
 Actualisation dynamique
 
 
-## Contenu
+## Contenu
 - titre de la section : 
 - chaque carte présente :
     - le titre : exeemple "🔥 Explorez les données en vue"
@@ -20,15 +20,15 @@ Actualisation dynamique
     - Redirection vers résulttats de la requête API (
 
 
-Composant DSFR :  
+## Composant DSFR :  
 
 Type : Card ou Card contenu enrichi
 Style : fr-card, fr-card--horizontal, fr-card—sm
-<img width="647" height="455" alt="image" src="https://github.com/user-attachments/assets/6e748479-6868-4fed-8cc3-9db6951360ed" />
 
+## Spécifications des cards
 
-| Élément                  | Emoji | Type de tri/API    |Nombre| Objectif                                      | UX/UI                                                        |                                     
-|:------------------------ |:----- |:------------------ |:----- |:--------------------------------------------- |:------------------------------------------------------------ |
-| Jeux les plus consultés  | 🔥    | `sort=-views`      |20| Mettre en avant les contenus à forte audience | Bon point d’entrée. Limitation à 3 cards évite la surcharge. |
-| Jeux les plus réutilisés | ♻️    | `sort=-reuses`     |20| Valoriser les rétuilisation et données les plus reprises       | Valorise les tendances actuelles            |
-| Nouveaux jeux publiés    | 🆕    | `sort=-created_at` |20| Montrer les dernières publications            | Permet la découverte de nouveautés                           |
+| Élément                  | Emoji | Requête API        | Nombre | Objectif                                               | UX/UI                                                                 |
+| :----------------------- | :---- | :----------------- | :----- | :----------------------------------------------------- | :-------------------------------------------------------------------- |
+| Jeux les plus consultés  | 🔥    | `sort=-views`      | 20     | Mettre en avant les contenus les plus populaires       | Bon point d’entrée. 3 cards affichées → évite la surcharge cognitive. |
+| Jeux les plus réutilisés | ♻️    | `sort=-reuses`     | 20     | Valoriser les jeux fréquemment repris ou remixés       | Met en avant la richesse des réutilisations.                          |
+| Nouveaux jeux publiés    | 🆕    | `sort=-created_at` | 20     | Montrer les dernières publications de données ouvertes | Permet la découverte des nouveautés.                                  |
