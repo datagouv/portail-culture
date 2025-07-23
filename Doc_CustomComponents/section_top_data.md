@@ -36,7 +36,7 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
 
 ## Code Yaml
 ```
-- title: 🔥 Explorez les données en vue
+- title: Découvrez les données phares
   id: section_top_data
   content:
     sub_section_datasets:
