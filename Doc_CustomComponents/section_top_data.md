@@ -32,3 +32,29 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
 | Jeux les plus consultés  | 🔥    | `sort=-views`      | 20     | Mettre en avant les contenus les plus populaires       |
 | Jeux les plus réutilisés | ♻️    | `sort=-reuses`     | 20     | Valoriser les jeux fréquemment repris ou remixés       | 
 | Nouveaux jeux publiés    | 🆕    | `sort=-created_at` | 20     | Montrer les dernières publications de données ouvertes | 
+
+
+## Code Yaml
+```
+- title: 🔥 Explorez les données en vue
+  id: section_top_data
+  content:
+    sub_section_datasets:
+    sub_section_cards:
+      title:
+      cards:
+        - name: '🔥 Jeux les plus consultés'
+          description: 'Découvrez les jeux les plus populaires sur la plateforme, en fonction du nombre de vues.'
+          url: 'datasets?sort=-views'
+          image_url: '/culture/assets/patrimoine.png'
+        - name: '♻️ Jeux les plus réutilisés'
+          description: 'Explorez les jeux de données les plus réutilisés par la communauté.'
+          url: 'datasets?sort=-reuses'
+          image_url: '/culture/assets/audiovisuel.png'
+        - name: '🆕 Nouveaux jeux publiés'
+          description: 'Parcourez les nouveaux jeux de données publiés sur la plateforme.'
+          url: 'datasets?sort=-created_at'
+          image_url: '/culture/assets/musee.png'
+    sub_section_tiles:
+    sub_section_buttons:
+```
