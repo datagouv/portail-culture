@@ -1,4 +1,4 @@
-# section_focus_discussion  
+# Focus & discussions
 ID : section_focus_discussion  
 
 ## Objectif  
