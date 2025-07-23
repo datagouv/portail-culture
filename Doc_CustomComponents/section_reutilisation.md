@@ -1,7 +1,8 @@
 # Réutilisation phare
 ID : section_reutilisation
 
-## Objectif : mettre en valeur les jeux de données les plus consultés sur la plateforme, afin d’encourager l’exploration des ressources jugées pertinentes ou utiles par la communauté. Ce bloc permet de valoriser les données à fort impact et de guider les utilisateurs vers les contenus les plus visités.
+## Objectif
+Mettre en valeur les jeux de données les plus consultés sur la plateforme, afin d’encourager l’exploration des ressources jugées pertinentes ou utiles par la communauté. Ce bloc permet de valoriser les données à fort impact et de guider les utilisateurs vers les contenus les plus visités.
 
 ## Automatisation
 Section éditoriale non automatisée
