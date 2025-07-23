@@ -25,4 +25,16 @@ Exemple d'un ajout d'une section html directement au sein du Yaml :
           </ul>
 
 ```
+## Objectif : offrir un point d’entrée visuel, intuitif et thématique à la diversité des données culturelles. Favorise l’exploration ciblée selon les centres d’intérêt des utilisateurs.
+
+## Automatisation : paramétrage manuel de l’encart
+
+## Périodicité d’actualisation
+Vérification annuelle de la liste des thématiques
+
+## Composant DSFR
+DsfrTags (type "Tag lien") Style : fr-tag, fr-tag--sm, fr-tag—clickable
+
+## Fonctionnement
+Chaque tag est cliquable (redirige vers /explore/?refine.theme=...) contient un emoji illustratif + libellé clair reprend les thématiques du site data.culture.gouv.fr
 
