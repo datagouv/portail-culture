@@ -2,7 +2,8 @@
 
 Identifiant : section_embarquement
 
-## Objectif : orienter immédiatement l’utilisateur vers les fonctionnalités clés du site : « Explorer », « Publier », « Réutiliser », « Échanger ». Cette section tout en contextualisant, maximise l’engagement et facilite la prise en main, quels que soient le profil ou le besoin.
+## Objectif : 
+orienter immédiatement l’utilisateur vers les fonctionnalités clés du site : « Explorer », « Publier », « Réutiliser », « Échanger ». Cette section tout en contextualisant, maximise l’engagement et facilite la prise en main, quels que soient le profil ou le besoin.
 
 
 ## Automatisation
