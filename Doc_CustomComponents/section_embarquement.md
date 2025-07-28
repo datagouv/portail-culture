@@ -5,14 +5,13 @@ Identifiant : section_embarquement
 ## Objectif : 
 orienter immédiatement l’utilisateur vers les fonctionnalités clés du site : « Explorer », « Publier », « Réutiliser », « Échanger ». Cette section tout en contextualisant, maximise l’engagement et facilite la prise en main, quels que soient le profil ou le besoin.
 
-
 ## Automatisation
 Statique (liens directs), mais possibilité d’enrichir dynamiquement selon l’évolution des usages ou les statistiques d’utilisation.
 
 ## Périodicité d’actualisation
 Stable (modifiable lors d’évolutions majeures du site ou sur la base des analyses d’audience).
 
-## Composant DSFR
+## Composant DSFR
 Type : Onglet, menu horizontal, ou bouton
 Style : fr-tabs, fr-tabs__tab (menu d’actions à la DSFR)
 
