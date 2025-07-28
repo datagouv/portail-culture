@@ -7,7 +7,7 @@ orienter immédiatement l’utilisateur vers les fonctionnalités clés du site�
 
 
 ## Automatisation
-Statique (liens directs), mais possibilité d’enrichir dynamiquement selon l’évolution des usages ou les statistiques d’utilisation.
+Statique (liens directs), mais possibilité d’enrichir dynamiquement selon l’évolution des usages ou les statistiques d’utilisation.
 
 ## Périodicité d’actualisation
 Stable (modifiable lors d’évolutions majeures du site ou sur la base des analyses d’audience).
