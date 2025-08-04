@@ -188,7 +188,7 @@ onMounted(async () => {
 </script>
 ```
 
-## custom HomeView
+## Etapes HomeView.vue
 ```
 <SectionExplorerData
   v-if="item.content?.sub_section_cards"
