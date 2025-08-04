@@ -64,4 +64,38 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
 * reuses.json : Requête 2 : https://www.data.gouv.fr/api/1/datasets/?organization=534fff91a3a7292c64a77f73&sort=-reuses&page=1&page_size=10
 * created_at.json : Requête 3 : https://www.data.gouv.fr/api/1/datasets/?organization=534fff91a3a7292c64a77f73&sort=-created_at&page=1&page_size=10
 
+## Déclaration section Yaml
+```
+- title: Explorer les données culturelles
+  id: section_explorer_data
+  content:
+    sub_section_cards:
+      title: "Explorer les données culturelles"
+      cards:
+        - name: "🔥 Jeux les plus consultés"
+          description: "Découvrez les jeux les plus populaires sur la plateforme."
+          url: "datasets?sort=-views"
+          image_url: "/culture/assets/patrimoine.png"
+          source: "/culture/data/views.json"
+          limit: 5
+
+        - name: "♻️ Jeux les plus réutilisés"
+          description: "Explorez les jeux de données les plus réutilisés par la communauté."
+          url: "datasets?sort=-reuses"
+          image_url: "/culture/assets/audiovisuel.png"
+          source: "/culture/data/reuses.json"
+          limit: 5
+
+        - name: "🆕 Nouveaux jeux publiés"
+          description: "Parcourez les nouveaux jeux de données publiés sur la plateforme."
+          url: "datasets?sort=-created_at"
+          image_url: "/culture/assets/musee.png"
+          source: "/culture/data/created_at.json"
+          limit: 5
+    sub_section_tiles:
+    sub_section_buttons:
+```
+
+
+
 
