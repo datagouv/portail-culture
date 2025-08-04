@@ -60,8 +60,8 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
 ```
 ## Liste des requêtes, les résultats sont stockés au sein du repertoire /public/culture/data/
 
-- views.json : Requête 1 : https://www.data.gouv.fr/api/1/datasets/?organization=534fff91a3a7292c64a77f73&sort=-views&page=1&page_size=10
-- reuses.json : Requête 2 : https://www.data.gouv.fr/api/1/datasets/?organization=534fff91a3a7292c64a77f73&sort=-reuses&page=1&page_size=10
-- created_at.jon : Requête 3 : https://www.data.gouv.fr/api/1/datasets/?organization=534fff91a3a7292c64a77f73&sort=-created_at&page=1&page_size=10
+* views.json : Requête 1 : https://www.data.gouv.fr/api/1/datasets/?organization=534fff91a3a7292c64a77f73&sort=-views&page=1&page_size=10
+* reuses.json : Requête 2 : https://www.data.gouv.fr/api/1/datasets/?organization=534fff91a3a7292c64a77f73&sort=-reuses&page=1&page_size=10
+* created_at.json : Requête 3 : https://www.data.gouv.fr/api/1/datasets/?organization=534fff91a3a7292c64a77f73&sort=-created_at&page=1&page_size=10
 
 
