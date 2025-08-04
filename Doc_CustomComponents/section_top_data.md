@@ -95,7 +95,111 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
     sub_section_tiles:
     sub_section_buttons:
 ```
+## custom composant section 
+```
+<template>
+  <section class="fr-container fr-py-6w">
+    <h2 class="fr-h3">{{ heading }}</h2>
+    <div class="fr-grid-row fr-grid-row--gutters">
+      <div
+        v-for="(card, i) in cards"
+        :key="i"
+        class="fr-col-12 fr-col-md-6 fr-col-lg-4"
+      >
+        <div class="fr-card fr-enlarge-link">
+          <div class="fr-card__body">
+            <div class="fr-card__content">
+              <h3 class="fr-card__title">
+                <a :href="card.url">{{ card.name }}</a>
+              </h3>
+              <p class="fr-card__desc">{{ card.description }}</p>
 
+              <!-- Liste des 5 premiers jeux -->
+              <ul v-if="card.datasets && card.datasets.length" class="fr-mt-2w">
+                <li v-for="(dataset, j) in card.datasets.slice(0, card.limit || 5)" :key="j">
+                  <a :href="dataset.page" target="_blank" rel="noopener noreferrer">
+                    {{ dataset.title }}
+                  </a>
+                </li>
+              </ul>
 
+              <!-- Lien vers tous les jeux -->
+              <div v-if="card.url" class="fr-mt-1w">
+                <a :href="card.url" class="fr-link">
+                  Voir tous les jeux
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="fr-card__header" v-if="card.image_url">
+            <div class="fr-card__img">
+              <img
+                class="fr-responsive-img"
+                :src="card.image_url"
+                :alt="card.name"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+import { ref, onMounted, defineProps } from 'vue'
+
+const props = defineProps<{
+  heading: string
+  cards: {
+    name: string
+    description: string
+    url: string
+    image_url: string
+    source?: string
+    limit?: number
+    datasets?: { title: string; page: string }[]
+  }[]
+}>()
+
+const cards = ref([...props.cards])
+
+onMounted(async () => {
+  await Promise.all(
+    cards.value.map(async (card) => {
+      if (card.source) {
+        try {
+          const res = await fetch(card.source)
+          const data = await res.json()
+          // Extrait les jeux : suppose que le JSON ressemble à ton fichier -views.json
+          card.datasets = data.data?.map((d: any) => ({
+            title: d.title,
+            page: d.page
+          })) || []
+        } catch (e) {
+          console.warn('Erreur lors du chargement du fichier', card.source, e)
+          card.datasets = []
+        }
+      }
+    })
+  )
+})
+</script>
+```
+
+## custom HomeView
+```
+<SectionExplorerData
+  v-if="item.content?.sub_section_cards"
+  :heading="item.content.sub_section_cards.title"
+  :cards="item.content.sub_section_cards.cards"
+/>
+
+```
+
+```
+import SectionExplorerData from '@/components/SectionExplorerData.vue'
+```
 
 
