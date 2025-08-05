@@ -34,7 +34,10 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
 | Nouveaux jeux publiés    | 🆕    | `sort=-created_at` | 20     | Montrer les dernières publications de données ouvertes | 
 
 
-## Code Yaml
+
+
+## Mise en pratique
+### Code Yaml
 ```
 - title: Découvrez les données phares
   id: section_top_data
@@ -58,13 +61,13 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
     sub_section_tiles:
     sub_section_buttons:
 ```
-## Liste des requêtes, les résultats sont stockés au sein du repertoire /public/culture/data/
+### Liste des requêtes, les résultats sont stockés au sein du repertoire /public/culture/data/
 
 * views.json : Requête 1 : https://www.data.gouv.fr/api/1/datasets/?organization=534fff91a3a7292c64a77f73&sort=-views&page=1&page_size=10
 * reuses.json : Requête 2 : https://www.data.gouv.fr/api/1/datasets/?organization=534fff91a3a7292c64a77f73&sort=-reuses&page=1&page_size=10
 * created_at.json : Requête 3 : https://www.data.gouv.fr/api/1/datasets/?organization=534fff91a3a7292c64a77f73&sort=-created_at&page=1&page_size=10
 
-## Déclaration section Yaml
+### Déclaration section Yaml
 ```
 - title: Explorer les données culturelles
   id: section_explorer_data
@@ -95,7 +98,7 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
     sub_section_tiles:
     sub_section_buttons:
 ```
-## custom composant section 
+### custom composant section 
 ```
 <template>
   <section class="fr-container fr-py-6w">
@@ -172,7 +175,7 @@ onMounted(async () => {
         try {
           const res = await fetch(card.source)
           const data = await res.json()
-          // Extrait les jeux : suppose que le JSON ressemble à ton fichier -views.json
+          // Extrait les jeux json
           card.datasets = data.data?.map((d: any) => ({
             title: d.title,
             page: d.page
@@ -188,7 +191,7 @@ onMounted(async () => {
 </script>
 ```
 
-## Etapes HomeView.vue
+### Etape déclaration section au sein de HomeView.vue
 ```
 <SectionExplorerData
   v-if="item.content?.sub_section_cards"
