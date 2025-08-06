@@ -100,7 +100,7 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
 ### custom composant section 
 ```
 <template>
-  <section class="fr-container fr-py-6w">
+  <section>
     <h2 class="fr-h3">{{ heading }}</h2>
     <div class="fr-grid-row fr-grid-row--gutters">
       <div
@@ -108,9 +108,8 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
         :key="i"
         class="fr-col-12 fr-col-md-6 fr-col-lg-4"
       >
-        <!-- ⚡ suppression de fr-enlarge-link -->
-        <div class="fr-card fr-card--vertical">
-          <div class="fr-card__header" v-if="card.image_url">
+        <div class="fr-card fr-card--vertical subsection-card">
+          <div v-if="card.image_url" class="fr-card__header">
             <div class="fr-card__img">
               <img
                 class="fr-responsive-img"
@@ -125,14 +124,17 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
               <h3 class="fr-card__title">{{ card.name }}</h3>
               <p class="fr-card__desc">{{ card.description }}</p>
 
-              <!-- Liste des jeux de données -->
-              <ul v-if="card.datasets && card.datasets.length" class="fr-mt-2w fr-links-group">
+              <!-- Liste ordonnée sans doublon de numéros -->
+              <ol
+                v-if="card.datasets && card.datasets.length"
+                class="fr-mt-2w dataset-list"
+              >
                 <li
                   v-for="(dataset, j) in card.datasets.slice(0, 3)"
                   :key="j"
                 >
                   <a
-                    class="fr-link"
+                    class="dataset-link"
                     :href="dataset.page"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -140,8 +142,10 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
                     {{ dataset.title }}
                   </a>
                 </li>
-              </ul>
-              <p v-else class="fr-text--sm">Aucun jeu disponible pour le moment.</p>
+              </ol>
+              <p v-else class="fr-text--sm">
+                Aucun jeu disponible pour le moment.
+              </p>
             </div>
           </div>
         </div>
@@ -181,7 +185,11 @@ onMounted(async () => {
               page: d.url
             })) || []
         } catch (e) {
-          console.warn('Erreur lors du chargement du fichier', card.source, e)
+          console.warn(
+            'Erreur lors du chargement du fichier',
+            card.source,
+            e
+          )
           card.datasets = []
         }
       }
@@ -199,18 +207,36 @@ onMounted(async () => {
 .fr-card__title {
   order: 0;
 }
+
 .fr-card__desc {
   order: 1;
 }
-.fr-links-group {
+
+/* Liste ordonnée */
+.dataset-list {
   order: 2;
-  list-style: none;
-  padding-left: 0;
+  padding-left: 1.5rem; /* espace pour les numéros */
+  margin: 1rem 0 0 0;
+  font-size: 0.95rem;
+  text-align: left;
 }
-.fr-links-group li {
+
+.dataset-list li {
   margin-bottom: 0.5rem;
 }
+
+/* Liens des datasets */
+.dataset-link {
+  text-decoration: none;
+  color: #161616;
+}
+
+.dataset-link:hover {
+  text-decoration: underline;
+  color: #000091;
+}
 </style>
+
 
 ```
 
