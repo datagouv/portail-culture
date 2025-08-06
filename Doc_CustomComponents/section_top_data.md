@@ -69,34 +69,33 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
 
 ### Déclaration section Yaml
 ```
-- title: Explorer les données culturelles
-  id: section_explorer_data
-  content:
-    sub_section_cards:
-      title: "Explorer les données culturelles"
-      cards:
-        - name: "🔥 Jeux les plus consultés"
-          description: "Découvrez les jeux les plus populaires sur la plateforme."
-          url: "datasets?sort=-views"
-          image_url: "/culture/assets/patrimoine.png"
-          source: "/culture/data/views.json"
-          limit: 5
+      - title: Explorer les données culturelles
+        id: section_explorer_data
+        content:
+        section_explorer_cards:
+          title: "Explorer les données culturelles"
+          cards:
+            - name: "🔥 Jeux les plus consultés"
+              description: "Découvrez les jeux les plus populaires sur la plateforme."
+              url: "datasets?sort=-views"
+              image_url: "/culture/assets/patrimoine.png"
+              source: "https://raw.githubusercontent.com/datagouv/portail-culture/refs/heads/Documentation/data/views.json"
+              limit: 5
 
-        - name: "♻️ Jeux les plus réutilisés"
-          description: "Explorez les jeux de données les plus réutilisés par la communauté."
-          url: "datasets?sort=-reuses"
-          image_url: "/culture/assets/audiovisuel.png"
-          source: "/culture/data/reuses.json"
-          limit: 5
+            - name: "♻️ Jeux les plus réutilisés"
+              description: "Explorez les jeux de données les plus réutilisés par la communauté."
+              url: "datasets?sort=-reuses"
+              image_url: "/culture/assets/audiovisuel.png"
+              source: "https://raw.githubusercontent.com/datagouv/portail-culture/refs/heads/Documentation/data/reuses.json"
+              limit: 5
 
-        - name: "🆕 Nouveaux jeux publiés"
-          description: "Parcourez les nouveaux jeux de données publiés sur la plateforme."
-          url: "datasets?sort=-created_at"
-          image_url: "/culture/assets/musee.png"
-          source: "/culture/data/created_at.json"
-          limit: 5
-    sub_section_tiles:
-    sub_section_buttons:
+            - name: "🆕 Nouveaux jeux publiés"
+              description: "Parcourez les nouveaux jeux de données publiés sur la plateforme."
+              url: "datasets?sort=-created_at"
+              image_url: "/culture/assets/musee.png"
+              source: "https://raw.githubusercontent.com/datagouv/portail-culture/refs/heads/Documentation/data/created.json"
+              limit: 5
+
 ```
 ### custom composant section 
 ```
@@ -109,32 +108,8 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
         :key="i"
         class="fr-col-12 fr-col-md-6 fr-col-lg-4"
       >
-        <div class="fr-card fr-enlarge-link">
-          <div class="fr-card__body">
-            <div class="fr-card__content">
-              <h3 class="fr-card__title">
-                <a :href="card.url">{{ card.name }}</a>
-              </h3>
-              <p class="fr-card__desc">{{ card.description }}</p>
-
-              <!-- Liste des 5 premiers jeux -->
-              <ul v-if="card.datasets && card.datasets.length" class="fr-mt-2w">
-                <li v-for="(dataset, j) in card.datasets.slice(0, card.limit || 5)" :key="j">
-                  <a :href="dataset.page" target="_blank" rel="noopener noreferrer">
-                    {{ dataset.title }}
-                  </a>
-                </li>
-              </ul>
-
-              <!-- Lien vers tous les jeux -->
-              <div v-if="card.url" class="fr-mt-1w">
-                <a :href="card.url" class="fr-link">
-                  Voir tous les jeux
-                </a>
-              </div>
-            </div>
-          </div>
-
+        <!-- ⚡ suppression de fr-enlarge-link -->
+        <div class="fr-card fr-card--vertical">
           <div class="fr-card__header" v-if="card.image_url">
             <div class="fr-card__img">
               <img
@@ -142,6 +117,31 @@ Style : fr-card, fr-card--horizontal, fr-card—sm
                 :src="card.image_url"
                 :alt="card.name"
               />
+            </div>
+          </div>
+
+          <div class="fr-card__body">
+            <div class="fr-card__content">
+              <h3 class="fr-card__title">{{ card.name }}</h3>
+              <p class="fr-card__desc">{{ card.description }}</p>
+
+              <!-- Liste des jeux de données -->
+              <ul v-if="card.datasets && card.datasets.length" class="fr-mt-2w fr-links-group">
+                <li
+                  v-for="(dataset, j) in card.datasets.slice(0, 3)"
+                  :key="j"
+                >
+                  <a
+                    class="fr-link"
+                    :href="dataset.page"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {{ dataset.title }}
+                  </a>
+                </li>
+              </ul>
+              <p v-else class="fr-text--sm">Aucun jeu disponible pour le moment.</p>
             </div>
           </div>
         </div>
@@ -175,11 +175,11 @@ onMounted(async () => {
         try {
           const res = await fetch(card.source)
           const data = await res.json()
-          // Extrait les jeux json
-          card.datasets = data.data?.map((d: any) => ({
-            title: d.title,
-            page: d.page
-          })) || []
+          card.datasets =
+            data.data?.map((d: any) => ({
+              title: d.title,
+              page: d.url
+            })) || []
         } catch (e) {
           console.warn('Erreur lors du chargement du fichier', card.source, e)
           card.datasets = []
@@ -189,20 +189,44 @@ onMounted(async () => {
   )
 })
 </script>
+
+<style scoped>
+.fr-card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.fr-card__title {
+  order: 0;
+}
+.fr-card__desc {
+  order: 1;
+}
+.fr-links-group {
+  order: 2;
+  list-style: none;
+  padding-left: 0;
+}
+.fr-links-group li {
+  margin-bottom: 0.5rem;
+}
+</style>
+
 ```
 
 ### Etape déclaration section au sein de HomeView.vue
 ```
-<SectionExplorerData
-  v-if="item.content?.sub_section_cards"
-  :heading="item.content.sub_section_cards.title"
-  :cards="item.content.sub_section_cards.cards"
-/>
+<!-- Nouveau composant custom -->
+        <SectionExplorerCards
+          v-if="item.section_explorer_cards"
+          :heading="item.section_explorer_cards.title"
+          :cards="item.section_explorer_cards.cards"
+        />
 
 ```
 
 ```
-import SectionExplorerData from '@/components/SectionExplorerData.vue'
+import SectionExplorerCards from '@/custom/culture/customComponents/SectionExplorerCards.vue'
 ```
 
 
