@@ -95,7 +95,6 @@
       "type": "string",
       "description": "Code d’activité principale selon la NAF rév.2. Le libellé peut suivre le code (ex. '90.01Z - Arts du spectacle vivant').",
       "example": "90.01Z",
-      "constraints": { "pattern": "^\\d{2}\\.\\d{2}[A-Z](?:.*)?$" },
       "rdfType": "http://id.insee.fr/codes/nafr2/sousClasse",
       "format": "default"
     },
@@ -105,7 +104,6 @@
       "type": "string",
       "description": "Code postal de l’établissement principal (5 chiffres). Conservé en texte pour préserver les zéros initiaux.",
       "example": "75001",
-      "constraints": { "pattern": "^\\d{5}$" },
       "format": "default"
     },
     {
@@ -122,7 +120,6 @@
       "type": "string",
       "description": "Code officiel INSEE de la région (COG) pour l’établissement principal.",
       "example": "11",
-      "constraints": { "pattern": "^\\d{2}$" },
       "rdfType": "http://rdf.insee.fr/def/geo#Region",
       "format": "default"
     },
@@ -138,9 +135,8 @@
       "name": "code_departement_siret",
       "title": "Code officiel du département (SIRET)",
       "type": "string",
-      "description": "Code officiel INSEE du département (COG) pour l’établissement principal. Exemples valides : 59, 75, 2A, 2B, 971–976.",
+      "description": "Code officiel INSEE du département (COG) pour l’établissement principal",
       "example": "59",
-      "constraints": { "pattern": "^(?:\\d{2}|2A|2B|97[1-6])$" },
       "rdfType": "http://rdf.insee.fr/def/geo#Departement",
       "format": "default"
     },
@@ -165,7 +161,6 @@
       "title": "Code postal du lieu de spectacles",
       "type": "string",
       "description": "Code postal (5 chiffres) du lieu de spectacles (catégorie 1).",
-      "constraints": { "pattern": "^\\d{5}$" },
       "format": "default"
     }
   ]
