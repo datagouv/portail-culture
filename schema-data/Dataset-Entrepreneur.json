@@ -87,7 +87,8 @@
         "http://id.insee.fr/entreprise/siren",
         "http://id.insee.fr/entreprise/siret"
       ],
-      "format": "default"
+      "format": "default", 
+      "tags": ["geo"]
     },
     {
       "name": "code_naf_ape",
@@ -96,7 +97,8 @@
       "description": "Code d’activité principale selon la NAF rév.2. Le libellé peut suivre le code (ex. '90.01Z - Arts du spectacle vivant').",
       "example": "90.01Z",
       "rdfType": "http://id.insee.fr/codes/nafr2/sousClasse",
-      "format": "default"
+      "format": "default",
+      "tags": ["geo"]
     },
     {
       "name": "code_postal_siret",
@@ -104,7 +106,8 @@
       "type": "string",
       "description": "Code postal de l’établissement principal (5 chiffres). Conservé en texte pour préserver les zéros initiaux.",
       "example": "75001",
-      "format": "default"
+      "format": "default",
+      "tags": ["geo"]
     },
     {
       "name": "region_siret",
@@ -112,7 +115,8 @@
       "type": "string",
       "description": "Nom officiel de la région de l’établissement principal, déterminé à partir du SIRET (COG).",
       "example": "Île-de-France",
-      "format": "default"
+      "format": "default",
+      "tags": ["geo"]
     },
     {
       "name": "code_region_siret",
@@ -121,7 +125,8 @@
       "description": "Code officiel INSEE de la région (COG) pour l’établissement principal.",
       "example": "11",
       "rdfType": "http://rdf.insee.fr/def/geo#Region",
-      "format": "default"
+      "format": "default",
+      "tags": ["geo"]
     },
     {
       "name": "departement_siret",
@@ -129,7 +134,8 @@
       "type": "string",
       "description": "Nom officiel du département de l’établissement principal (COG).",
       "example": "Nord",
-      "format": "default"
+      "format": "default",
+      "tags": ["geo"]
     },
     {
       "name": "code_departement_siret",
@@ -139,6 +145,7 @@
       "example": "59",
       "rdfType": "http://rdf.insee.fr/def/geo#Departement",
       "format": "default"
+      "tags": ["geo"],
     },
     {
       "name": "geoloc_cp_siret",
@@ -148,6 +155,7 @@
       "example": "48.8566, 2.3522",
       "rdfType": "http://www.w3.org/2003/01/geo/wgs84_pos#Point",
       "format": "default"
+      "tags": ["geo"],
     },
     {
       "name": "nom_lieu",
@@ -161,7 +169,8 @@
       "title": "Code postal du lieu de spectacles",
       "type": "string",
       "description": "Code postal (5 chiffres) du lieu de spectacles (catégorie 1).",
-      "format": "default"
+      "format": "default",
+      "tags": ["geo"]
     }
   ]
 }
