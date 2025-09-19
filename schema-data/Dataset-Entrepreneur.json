@@ -144,8 +144,8 @@
       "description": "Code officiel INSEE du département (COG) pour l’établissement principal",
       "example": "59",
       "rdfType": "http://rdf.insee.fr/def/geo#Departement",
-      "format": "default"
-      "tags": ["geo"],
+      "format": "default",
+      "tags": ["geo"]
     },
     {
       "name": "geoloc_cp_siret",
@@ -154,8 +154,8 @@
       "description": "Coordonnées géographiques calculées à partir du code postal de l’établissement principal (ou de l’adresse de la personne physique). Format 'lat, lon' en WGS84.",
       "example": "48.8566, 2.3522",
       "rdfType": "http://www.w3.org/2003/01/geo/wgs84_pos#Point",
-      "format": "default"
-      "tags": ["geo"],
+      "format": "default",
+      "tags": ["geo"]
     },
     {
       "name": "nom_lieu",
