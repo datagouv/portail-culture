@@ -2,14 +2,8 @@
   "name": "declarations_entrepreneurs_spectacles_vivants",
   "title": "Déclarations des entrepreneurs de spectacles vivants",
   "description": "Schéma Table Schema pour la ressource des déclarations d’entrepreneurs de spectacles vivants. Intègre des codes de référentiels officiels (COG INSEE pour région/département, NAF rév.2) en plus des libellés pour assurer l’interopérabilité.",
-  "missingValues": [
-    "",
-    "null",
-    "NULL"
-  ],
-  "primaryKey": [
-    "numero_recepisse"
-  ],
+  "missingValues": ["", "null", "NULL"],
+  "primaryKey": ["numero_recepisse"],
   "datagouv_dataset_id": "5fc9b4729dbf684fecb13bae",
   "datagouv_resource_id": "fb6c3b2e-da8c-4e69-a719-6a96329e4cb2",
   "schema_version": "1.0.0",
@@ -27,12 +21,7 @@
       "title": "Type de déclaration",
       "type": "string",
       "description": "Type de procédure de la déclaration.",
-      "constraints": {
-        "enum": [
-          "Première demande",
-          "Renouvellement"
-        ]
-      },
+      "constraints": { "enum": ["Première demande", "Renouvellement"] },
       "format": "default"
     },
     {
@@ -40,13 +29,7 @@
       "title": "Catégorie de licence",
       "type": "integer",
       "description": "Catégorie de la licence : 1 = exploitant de lieu, 2 = producteur, 3 = diffuseur (références juridiques ministère de la Culture, fiches 2.1, 2.2, 2.3).",
-      "constraints": {
-        "enum": [
-          1,
-          2,
-          3
-        ]
-      },
+      "constraints": { "enum": [1, 2, 3] },
       "format": "default"
     },
     {
@@ -83,15 +66,7 @@
       "title": "Statut de la déclaration / licence",
       "type": "string",
       "description": "Statut administratif :\n- valide : la déclaration vaut licence ; exercice licite ;\n- invalide : exercice interdit (licence expirée ou refusée) ;\n- invalidé : licence retirée après validité ;\n- en instruction : dossier en cours ; exercice interdit ;\n- expiré : licence venue à expiration.",
-      "constraints": {
-        "enum": [
-          "valide",
-          "invalide",
-          "invalidé",
-          "en instruction",
-          "expiré"
-        ]
-      },
+      "constraints": { "enum": ["valide", "invalide", "invalidé", "en instruction", "expiré"] },
       "format": "default"
     },
     {
@@ -107,9 +82,7 @@
       "type": "string",
       "description": "Numéro SIRET (14 chiffres) de l’organisme ou SIREN (9 chiffres) pour la personne physique.",
       "example": "12345678901234",
-      "constraints": {
-        "pattern": "^(\\d{14}|\\d{9})$"
-      },
+      "constraints": { "pattern": "^(\\d{14}|\\d{9})$" },
       "rdfTypes": [
         "http://id.insee.fr/entreprise/siren",
         "http://id.insee.fr/entreprise/siret"
@@ -122,9 +95,7 @@
       "type": "string",
       "description": "Code d’activité principale selon la NAF rév.2. Le libellé peut suivre le code (ex. '90.01Z - Arts du spectacle vivant').",
       "example": "90.01Z",
-      "constraints": {
-        "pattern": "^\\d{2}\\.\\d{2}[A-Z](?:.*)?$"
-      },
+      "constraints": { "pattern": "^\\d{2}\\.\\d{2}[A-Z](?:.*)?$" },
       "rdfType": "http://id.insee.fr/codes/nafr2/sousClasse",
       "format": "default"
     },
@@ -134,9 +105,7 @@
       "type": "string",
       "description": "Code postal de l’établissement principal (5 chiffres). Conservé en texte pour préserver les zéros initiaux.",
       "example": "75001",
-      "constraints": {
-        "pattern": "^\\d{5}$"
-      },
+      "constraints": { "pattern": "^\\d{5}$" },
       "format": "default"
     },
     {
@@ -153,10 +122,8 @@
       "type": "string",
       "description": "Code officiel INSEE de la région (COG) pour l’établissement principal.",
       "example": "11",
-      "constraints": {
-        "pattern": "^\\d{2}$"
-      },
-      "rdfType": "http://id.insee.fr/geo/region",
+      "constraints": { "pattern": "^\\d{2}$" },
+      "rdfType": "http://rdf.insee.fr/def/geo#Region",
       "format": "default"
     },
     {
@@ -173,10 +140,8 @@
       "type": "string",
       "description": "Code officiel INSEE du département (COG) pour l’établissement principal. Exemples valides : 59, 75, 2A, 2B, 971–976.",
       "example": "59",
-      "constraints": {
-        "pattern": "^(?:\\d{2}|2A|2B|97[1-6])$"
-      },
-      "rdfType": "http://id.insee.fr/geo/departement",
+      "constraints": { "pattern": "^(?:\\d{2}|2A|2B|97[1-6])$" },
+      "rdfType": "http://rdf.insee.fr/def/geo#Departement",
       "format": "default"
     },
     {
@@ -185,8 +150,8 @@
       "type": "string",
       "description": "Coordonnées géographiques calculées à partir du code postal de l’établissement principal (ou de l’adresse de la personne physique). Format 'lat, lon' en WGS84.",
       "example": "48.8566, 2.3522",
-      "format": "default",
-      "rdfType": "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+      "rdfType": "http://www.w3.org/2003/01/geo/wgs84_pos#Point",
+      "format": "default"
     },
     {
       "name": "nom_lieu",
@@ -200,9 +165,7 @@
       "title": "Code postal du lieu de spectacles",
       "type": "string",
       "description": "Code postal (5 chiffres) du lieu de spectacles (catégorie 1).",
-      "constraints": {
-        "pattern": "^\\d{5}$"
-      },
+      "constraints": { "pattern": "^\\d{5}$" },
       "format": "default"
     }
   ]
