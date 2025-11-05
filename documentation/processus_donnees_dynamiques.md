@@ -15,10 +15,10 @@
 
 ## Qu’est-ce qu’un DAG ?
 
-Un **DAG** (*Directed Acyclic Graph*) est un **workflow automatisé** défini dans **Apache Airflow**.  
-Il décrit une série de **tâches planifiées** à exécuter dans un **ordre précis**, sans boucle.
+Un **DAG** (Directed Acyclic Graph) est un workflow automatisé défini dans Apache Airflow.  
+Il décrit une série de tâches planifiées à exécuter dans un ordre précis, sans boucle.
 
-> Autrement dit, c’est une **routine planifiée** qui s’exécute automatiquement selon un scénario défini.
+> Autrement dit, c’est une routine planifiée qui s’exécute automatiquement selon un scénario défini.
 
 ---
 
