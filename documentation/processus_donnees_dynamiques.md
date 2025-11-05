@@ -27,7 +27,7 @@ Il décrit une série de tâches planifiées à exécuter dans un ordre précis,
 ### Étape 1 — Collecte et agrégation des données
 
 **Fichier concerné :**  
-`[https://github.com/datagouv/datagouvfr_data_pipelines/verticales/culture/task_functions.py](https://github.com/datagouv/datagouvfr_data_pipelines/blob/main/verticales/culture/task_functions.py)`
+https://github.com/datagouv/datagouvfr_data_pipelines/blob/main/verticales/culture/task_functions.py
 
 - Les tâches du DAG interrogent l’API `data.gouv.fr` pour chaque organisation et jeu de données du périmètre “Culture”.
 - Les statistiques mensuelles (vues, téléchargements, réutilisations…) sont **additionnées** pour obtenir un total sur les **12 derniers mois**.
