@@ -1,135 +1,86 @@
 import requests
-import json
 import pandas as pd
+import time
 from collections import defaultdict
 
-BASE_URL = "https://www.data.gouv.fr/api/1/datasets/?tag=culture"
-PAGE_SIZE = 100  # max allowed
-MAX_PAGES = 100  # safety guard
-import requests
-import json
-import pandas as pd
-from collections import defaultdict
-
-API_URL = "https://www.data.gouv.fr/api/1/datasets/"
+BASE_URL = "https://www.data.gouv.fr/api/1/datasets/"
 TAG = "culture"
 PAGE_SIZE = 100
+MAX_RETRY = 5
+
+headers = {
+    "User-Agent": "MinCultureDataBot/1.0 (+https://culture.data.gouv.fr)"
+}
+
+def fetch_page(page):
+    url = f"{BASE_URL}?tag={TAG}&page={page}&page_size={PAGE_SIZE}"
+    retries = 0
+
+    while retries < MAX_RETRY:
+        try:
+            r = requests.get(url, headers=headers, timeout=30, stream=True)
+            r.raise_for_status()
+            return r.json()
+        except Exception as e:
+            retries += 1
+            wait = retries * 2
+            print(f"⚠️ Error loading page {page}, retry {retries}/{MAX_RETRY}... waiting {wait}s ({e})")
+            time.sleep(wait)
+
+    print(f"❌ Failed to fetch page {page} after retries.")
+    return None
 
 def fetch_all_culture_datasets():
     page = 1
-    results = []
+    all_results = []
 
     while True:
-        url = f"{API_URL}?tag={TAG}&page={page}&page_size={PAGE_SIZE}"
-        r = requests.get(url)
-        if r.status_code == 404:  # plus de page suivante
-            break
-        
-        r.raise_for_status()
-        data = r.json()
+        print(f"Fetching page {page}...")
+        data = fetch_page(page)
 
-        if not data["data"]:
+        if not data or "data" not in data or len(data["data"]) == 0:
+            print("✅ Finished pagination")
             break
 
-        results.extend(data["data"])
+        all_results.extend(data["data"])
         page += 1
 
-    return results
+        time.sleep(0.6)  # respect API rate limits
+
+    return all_results
+
+# --- Main extraction logic ---
 
 datasets = fetch_all_culture_datasets()
 
-# Structure: { org_name: { id, count, badge } }
-orgs = defaultdict(lambda: {"id": None, "count": 0, "badge": None})
+orgs = defaultdict(lambda: {
+    "id": None,
+    "badge": None,
+    "count": 0
+})
 
-for d in datasets:
-    org = d.get("organization")
+for ds in datasets:
+    org = ds.get("organization")
     if not org:
         continue
 
     name = org["name"]
     orgs[name]["id"] = org["id"]
+    badges = org.get("badges", [])
+
+    orgs[name]["badge"] = badges[0]["kind"] if badges else "unknown"
     orgs[name]["count"] += 1
 
-    badges = org.get("badges", [])
-    if badges:
-        orgs[name]["badge"] = badges[0].get("kind", "none")
-    else:
-        orgs[name]["badge"] = "none"
-
-# ✅ JSON export
-with open("./data/organisation_culture.json", "w", encoding="utf-8") as f:
-    json.dump(orgs, f, indent=2, ensure_ascii=False)
-
-# ✅ CSV export
+# Convert to DataFrame
 df = pd.DataFrame([
-    {
-        "organization_name": name,
-        "organization_id": info["id"],
-        "dataset_count": info["count"],
-        "organization_badge": info["badge"]
-    }
-    for name, info in orgs.items()
-])
+    {"organisation": name, "id": data["id"], "type": data["badge"], "datasets_count": data["count"]}
+    for name, data in orgs.items()
+]).sort_values(by="datasets_count", ascending=False)
 
-df.to_csv("./data/organisation_count_culture.csv", index=False, encoding="utf-8")
+# Save CSV + JSON
+df.to_csv("data/organisation_count_culture.csv", index=False)
+df.to_json("data/organisation_culture.json", orient="records", force_ascii=False)
 
 print("✅ Files generated:")
 print(" - data/organisation_culture.json")
 print(" - data/organisation_count_culture.csv")
-
-def fetch_all_culture_datasets():
-    page = 1
-    all_data = []
-
-    while page <= MAX_PAGES:
-        url = f"{BASE_URL}&page={page}&page_size={PAGE_SIZE}"
-        print(f"Fetching page {page}...")
-
-        r = requests.get(url)
-
-        # ✅ Stop if page doesn't exist
-        if r.status_code == 404:
-            print("✅ API returned 404, stopping pagination.")
-            break
-
-        r.raise_for_status()
-        data = r.json()
-
-        # ✅ No results means end of pagination
-        if "data" not in data or len(data["data"]) == 0:
-            print("✅ No more data, stopping pagination.")
-            break
-
-        all_data.extend(data["data"])
-        page += 1
-
-    print(f"📦 Total datasets fetched: {len(all_data)}")
-    return all_data
-
-
-datasets = fetch_all_culture_datasets()
-
-orgs = defaultdict(lambda: {"id": None, "count": 0})
-
-for d in datasets:
-    org = d.get("organization")
-    if not org:
-        continue
-    orgs[org["name"]]["id"] = org["id"]
-    orgs[org["name"]]["count"] += 1
-
-# JSON output
-with open("./data/organisation_culture.json", "w", encoding="utf-8") as f:
-    json.dump(orgs, f, indent=2, ensure_ascii=False)
-
-# CSV output
-df = pd.DataFrame([
-    {"organization_name": name, "organization_id": info["id"], "dataset_count": info["count"]}
-    for name, info in orgs.items()
-])
-
-df.to_csv("./data/organisation_count_culture.csv", index=False, encoding="utf-8")
-
-print("✅ Files created:")
-print("- data/organisation_culture.json")
-print("- data/organisation_count_culture.csv")
