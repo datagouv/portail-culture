@@ -3,7 +3,7 @@ import pandas as pd
 import time
 from collections import defaultdict
 
-BASE_URL = "https://www.data.gouv.fr/api/1/datasets/"
+BASE_URL = "https://www.data.gouv.fr/api/1"
 TAG = "culture"
 PAGE_SIZE = 100
 MAX_RETRY = 5
@@ -12,91 +12,100 @@ headers = {
     "User-Agent": "MinCultureDataBot/1.0 (+https://culture.data.gouv.fr)"
 }
 
-def fetch_page(page):
-    url = f"{BASE_URL}?tag={TAG}&page={page}&page_size={PAGE_SIZE}"
+def retry_get(url):
     retries = 0
-
     while retries < MAX_RETRY:
         try:
-            r = requests.get(url, headers=headers, timeout=30, stream=True)
+            r = requests.get(url, headers=headers, timeout=30)
             r.raise_for_status()
             return r.json()
         except Exception as e:
             retries += 1
             wait = retries * 2
-            print(f"⚠️ Error loading page {page}, retry {retries}/{MAX_RETRY}... waiting {wait}s ({e})")
+            print(f"⚠️ Error fetching {url}, retry {retries}/{MAX_RETRY}, wait {wait}s — ({e})")
             time.sleep(wait)
-
-    print(f"❌ Failed to fetch page {page} after retries.")
+    print(f"❌ Failed after {MAX_RETRY} retries: {url}")
     return None
 
-def fetch_all_culture_datasets():
+def fetch_all_datasets():
     page = 1
-    all_results = []
+    results = []
 
     while True:
-        print(f"Fetching page {page}...")
-        data = fetch_page(page)
+        print(f"📄 Fetching page {page}...")
+        url = f"{BASE_URL}/datasets/?tag={TAG}&page={page}&page_size={PAGE_SIZE}"
+        data = retry_get(url)
 
-        if not data or "data" not in data or len(data["data"]) == 0:
-            print("✅ Finished pagination")
+        if not data or len(data.get("data", [])) == 0:
+            print("✅ Pagination terminée")
             break
 
-        all_results.extend(data["data"])
+        results.extend(data["data"])
         page += 1
-        time.sleep(0.6)  # Respect API rate limits
+        time.sleep(0.5)
 
-    return all_results
+    return results
 
-# --- Main extraction logic ---
+def fetch_org_details(org_id):
+    url = f"{BASE_URL}/organizations/{org_id}/"
+    return retry_get(url)
 
-datasets = fetch_all_culture_datasets()
+# --- MAIN ---
+
+datasets = fetch_all_datasets()
 
 orgs = defaultdict(lambda: {
     "id": None,
+    "name": None,
     "siret": None,
     "badges": [],
-    "count": 0
+    "datasets_count": 0
 })
 
+# Collect base org data from datasets listing
 for ds in datasets:
     org = ds.get("organization")
-    if not org:
+    if not org: 
         continue
 
     name = org.get("name")
-    if not name:
+    orgs[name]["id"] = org.get("id")
+    orgs[name]["name"] = name
+
+    # badges from dataset listing
+    badges = org.get("badges", [])
+    orgs[name]["badges"] = list(set(orgs[name]["badges"] + [b.get("kind") for b in badges if "kind" in b]))
+    orgs[name]["datasets_count"] += 1
+
+# Fetch SIRETs via org API
+print("\n🏛️ Récupération des SIRET pour chaque organisation…\n")
+
+for name, info in orgs.items():
+    org_id = info["id"]
+    if not org_id:
         continue
 
-    orgs[name]["id"] = org.get("id")
+    org_data = fetch_org_details(org_id)
+    if org_data:
+        orgs[name]["siret"] = org_data.get("business_number_id")
 
-    # ✅ Récupération du SIRET si présent
-    orgs[name]["siret"] = org.get("business_number_id", None)
+    time.sleep(0.3)  # polite delay
 
-    # ✅ Récupération de tous les badges
-    badges = org.get("badges", [])
-    orgs[name]["badges"] = list(set(
-        orgs[name]["badges"] + [b.get("kind") for b in badges if "kind" in b]
-    ))
-
-    orgs[name]["count"] += 1
-
-# Convert to DataFrame
+# Build dataframe
 df = pd.DataFrame([
     {
-        "organisation": name,
-        "id": data["id"],
-        "siret": data["siret"],
-        "badges": ", ".join(data["badges"]) if data["badges"] else "none",
-        "datasets_count": data["count"]
+        "organisation": info["name"],
+        "id": info["id"],
+        "siret": info["siret"],
+        "badges": ", ".join(info["badges"]) if info["badges"] else "none",
+        "datasets_count": info["datasets_count"]
     }
-    for name, data in orgs.items()
+    for info in orgs.values()
 ]).sort_values(by="datasets_count", ascending=False)
 
-# Save CSV + JSON
 df.to_csv("data/organisation_count_culture.csv", index=False)
 df.to_json("data/organisation_culture.json", orient="records", force_ascii=False)
 
-print("✅ Files generated:")
-print(" - data/organisation_culture.json")
+print("\n✅ Terminé — fichiers générés :")
 print(" - data/organisation_count_culture.csv")
+print(" - data/organisation_culture.json")
