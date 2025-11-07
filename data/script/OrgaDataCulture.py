@@ -44,8 +44,7 @@ def fetch_all_culture_datasets():
 
         all_results.extend(data["data"])
         page += 1
-
-        time.sleep(0.6)  # respect API rate limits
+        time.sleep(0.6)  # Respect API rate limits
 
     return all_results
 
@@ -55,7 +54,8 @@ datasets = fetch_all_culture_datasets()
 
 orgs = defaultdict(lambda: {
     "id": None,
-    "badge": None,
+    "siret": None,
+    "badges": [],
     "count": 0
 })
 
@@ -64,16 +64,32 @@ for ds in datasets:
     if not org:
         continue
 
-    name = org["name"]
-    orgs[name]["id"] = org["id"]
-    badges = org.get("badges", [])
+    name = org.get("name")
+    if not name:
+        continue
 
-    orgs[name]["badge"] = badges[0]["kind"] if badges else "unknown"
+    orgs[name]["id"] = org.get("id")
+
+    # ✅ Récupération du SIRET si présent
+    orgs[name]["siret"] = org.get("business_number_id", None)
+
+    # ✅ Récupération de tous les badges
+    badges = org.get("badges", [])
+    orgs[name]["badges"] = list(set(
+        orgs[name]["badges"] + [b.get("kind") for b in badges if "kind" in b]
+    ))
+
     orgs[name]["count"] += 1
 
 # Convert to DataFrame
 df = pd.DataFrame([
-    {"organisation": name, "id": data["id"], "type": data["badge"], "datasets_count": data["count"]}
+    {
+        "organisation": name,
+        "id": data["id"],
+        "siret": data["siret"],
+        "badges": ", ".join(data["badges"]) if data["badges"] else "none",
+        "datasets_count": data["count"]
+    }
     for name, data in orgs.items()
 ]).sort_values(by="datasets_count", ascending=False)
 
