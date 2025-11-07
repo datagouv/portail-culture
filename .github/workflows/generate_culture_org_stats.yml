@@ -28,9 +28,10 @@ jobs:
       run: |
         git config --global user.name "github-actions"
         git config --global user.email "github-actions@github.com"
-
-        # Ajouter uniquement le fichier CSV
-        git add data/organisation_count_culture.csv
-
-        git commit -m "Auto-update culture dataset org stats [skip ci]" || echo "No changes to commit"
+    
+        # Ajouter les deux fichiers générés
+        git add data/organisation_count_culture.csv || true
+        git add data/organisation_culture.json || true
+    
+        git commit -m "Auto-update culture dataset stats [skip ci]" || echo "No changes to commit"
         git push
