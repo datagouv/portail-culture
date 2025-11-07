@@ -1,8 +1,6 @@
 name: Update Culture Orgs Stats
 
 on:
-  schedule:
-    - cron: "0 6 * * *" # Tous les jours à 06h UTC
   workflow_dispatch: # Permet lancement manuel
 
 jobs:
