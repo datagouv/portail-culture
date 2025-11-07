@@ -1,37 +1,48 @@
-name: Generate Culture Org Stats
+name: Update Culture Orgs Stats
 
 on:
-  workflow_dispatch:   # lancement manuel
+  schedule:
+    - cron: "0 6 * * *" # Tous les jours à 06h UTC
+  workflow_dispatch: # Permet lancement manuel
+
 jobs:
-  build:
+  update-culture-orgs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: Documentation # on travaille sur la branche Documentation
+          fetch-depth: 0
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.11"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests pandas
+      - name: Install dependencies
+        run: |
+          pip install requests pandas
 
-    - name: Run dataset aggregation script
-      run: |
-        python data/script/OrgaDataCulture.py
+      - name: Run Culture Orgs script
+        run: |
+          python data/script/OrgaDataCulture.py
 
-    - name: Commit and push results
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-    
-        # Ajouter les deux fichiers générés
-        git add data/organisation_count_culture.csv || true
-        git add data/organisation_culture.json || true
-    
-        git commit -m "Auto-update culture dataset stats [skip ci]" || echo "No changes to commit"
-        git push
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Add generated files
+        run: |
+          git add data/organisation_count_culture.csv || echo "no CSV found"
+          git add data/organisation_culture.json || echo "no JSON found"
+
+      - name: Commit changes
+        run: |
+          git commit -m "Auto-update org culture stats [skip ci]" || echo "No changes to commit"
+
+      - name: Push changes
+        run: |
+          git push origin Documentation
