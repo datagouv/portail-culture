@@ -1,133 +1,133 @@
 organisation,id,siret,badges,datasets_count
-Ministère de la Culture,534fff91a3a7292c64a77f73,,"public-service, certified",177
-Conseil départemental de la Haute-Garonne - Haute-Garonne Open Data,582a045088ee3875cec65bb4,,"public-service, certified",71
-Région Île-de-France,534fffa8a3a7292c64a780c8,,"public-service, certified",63
+Ministère de la Culture,534fff91a3a7292c64a77f73,11004601800013,"certified, public-service",177
+Conseil départemental de la Haute-Garonne - Haute-Garonne Open Data,582a045088ee3875cec65bb4,22310001700423,"certified, public-service",71
+Région Île-de-France,534fffa8a3a7292c64a780c8,23750007900312,"certified, public-service",63
 Ressourcerie datalocale,5420b971a3a7297b491991e1,,none,45
-Toulouse métropole,534fffb3a3a7292c64a78129,,"certified, local-authority",34
-Ville d'Antibes,566594f388ee38738640355c,,"public-service, certified",34
-Mairie de Cannes,5d1db3df8b4c416509fd0870,,"certified, local-authority",32
-Ville de Levallois,5afd51bfc751df62ae0b80ff,,"certified, local-authority",24
-Ville de Marseille,534fffb8a3a7292c64a7814c,,"certified, local-authority",19
-Communauté d'Agglomeration Versailles Grand Parc,58c5a537c751df2fb0fde3c9,,"certified, local-authority",16
-Ville de Paris,534fff89a3a7292c64a77eb7,,"certified, local-authority",15
-Rennes Métropole,534fffaaa3a7292c64a780dd,,"certified, local-authority",15
-Région Hauts-de-France,5df935d8634f414e69469492,,"certified, local-authority",13
-Clermont Auvergne Métropole,5f60b2cb86bb3584d0f09f08,,"certified, local-authority",13
-Ministère chargé de l'Enseignement supérieur et de la Recherche,534fff90a3a7292c64a77f45,,"public-service, certified",13
+Toulouse métropole,534fffb3a3a7292c64a78129,24310051800170,"certified, local-authority",34
+Ville d'Antibes,566594f388ee38738640355c,21060004500012,"certified, public-service",34
+Mairie de Cannes,5d1db3df8b4c416509fd0870,21060029200010,"certified, local-authority",32
+Ville de Levallois,5afd51bfc751df62ae0b80ff,21920044100018,"certified, local-authority",24
+Ville de Marseille,534fffb8a3a7292c64a7814c,21130055300016,"certified, local-authority",19
+Communauté d'Agglomeration Versailles Grand Parc,58c5a537c751df2fb0fde3c9,24780058400036,"certified, local-authority",16
+Ville de Paris,534fff89a3a7292c64a77eb7,21750001600019,"certified, local-authority",15
+Rennes Métropole,534fffaaa3a7292c64a780dd,24350013900189,"certified, local-authority",15
+Région Hauts-de-France,5df935d8634f414e69469492,20005374200017,"certified, local-authority",13
+Clermont Auvergne Métropole,5f60b2cb86bb3584d0f09f08,24630070100231,"certified, local-authority",13
+Ministère chargé de l'Enseignement supérieur et de la Recherche,534fff90a3a7292c64a77f45,11004401300040,"certified, public-service",13
 NosDonnées.fr,534fff99a3a7292c64a78016,,none,13
-Métropole Nice Côte d'Azur,59aea226c751df38f3f6834b,,"certified, local-authority",12
-Métropole du Grand Paris,5c9c9b21634f4110f582a39a,,"certified, local-authority",12
-Région Occitanie / Pyrénées Méditerranée,5a153f5688ee3829e2fbf39f,,"certified, local-authority",11
-Département de la Seine-Maritime,5e281d5b634f417c0c54ae2f,,"certified, local-authority",11
-Ville d'Issy-les-Moulineaux,534fffb7a3a7292c64a78145,,"certified, local-authority",10
-Région des Pays de la Loire,534fffa7a3a7292c64a780c5,,"certified, local-authority",10
-Arcom - Autorité de Régulation de la Communication Audiovisuelle et Numérique,6246a8ef51bb06001c520e78,,"public-service, certified",9
-Cità di Portivechju,619e52c5aed3f24ffa360651,,"certified, local-authority",9
-Mulhouse Alsace Agglomération,5be06c41634f4158c956b300,,"public-service, certified",8
-Ville de Roubaix,5be53f55634f4119ca26ec72,,"certified, local-authority",7
-Centre national du cinéma et de l'image animée,534fff5fa3a7292c64a77d49,,"public-service, certified",7
-Département du Calvados,5bd96f848b4c415ecb7a9a8b,,"certified, local-authority",7
-Bibliothèque nationale de France,534fff5aa3a7292c64a77d09,,"public-service, certified",7
-Communauté d'Agglomération Lisieux Normandie,5ddcf096634f411f920b844d,,"certified, local-authority",6
-Région Centre-Val de Loire,561a7f00c751df4e6dcdbb48,,"certified, local-authority",6
-Collectivité de Corse,537d58eea3a72973a2dc026c,,"certified, local-authority",6
-Plateforme Open Data ZABAL,5f33a01d3afea2a7f576af1a,,"public-service, certified",6
+Métropole Nice Côte d'Azur,59aea226c751df38f3f6834b,20003019500115,"certified, local-authority",12
+Métropole du Grand Paris,5c9c9b21634f4110f582a39a,20005478100022,"certified, local-authority",12
+Région Occitanie / Pyrénées Méditerranée,5a153f5688ee3829e2fbf39f,20005379100014,"certified, local-authority",11
+Département de la Seine-Maritime,5e281d5b634f417c0c54ae2f,22760540900019,"certified, local-authority",11
+Ville d'Issy-les-Moulineaux,534fffb7a3a7292c64a78145,21920040900015,"certified, local-authority",10
+Région des Pays de la Loire,534fffa7a3a7292c64a780c5,23440003400026,"certified, local-authority",10
+Arcom - Autorité de Régulation de la Communication Audiovisuelle et Numérique,6246a8ef51bb06001c520e78,11000029600027,"certified, public-service",9
+Cità di Portivechju,619e52c5aed3f24ffa360651,21200247100010,"certified, local-authority",9
+Mulhouse Alsace Agglomération,5be06c41634f4158c956b300,20002328100013,"certified, public-service",8
+Ville de Roubaix,5be53f55634f4119ca26ec72,21590512600011,"certified, local-authority",7
+Centre national du cinéma et de l'image animée,534fff5fa3a7292c64a77d49,18004603900186,"certified, public-service",7
+Département du Calvados,5bd96f848b4c415ecb7a9a8b,22140118500014,"certified, local-authority",7
+Bibliothèque nationale de France,534fff5aa3a7292c64a77d09,18004625200177,"certified, public-service",7
+Communauté d'Agglomération Lisieux Normandie,5ddcf096634f411f920b844d,20006953200220,"certified, local-authority",6
+Région Centre-Val de Loire,561a7f00c751df4e6dcdbb48,23450002300028,"certified, local-authority",6
+Collectivité de Corse,537d58eea3a72973a2dc026c,20007695800012,"certified, local-authority",6
+Plateforme Open Data ZABAL,5f33a01d3afea2a7f576af1a,84130247400017,"certified, public-service",6
 Mairie de Toulouse,534fff8aa3a7292c64a77ecd,,"certified, local-authority",5
-Rennes Métropole en accès libre,580735be88ee3814295ff490,,"certified, local-authority",5
-Ville de Saint-Malo,53ba4599a3a729219b7beaca,,"certified, local-authority",5
-CHATEAUROUX METROPOLE,5bf67a998b4c417eae692920,,"certified, local-authority",5
-Département des Alpes de Haute-Provence,62344583fb72d30231b482f5,,"certified, local-authority",5
-Département des Côtes d'Armor,54aff788c751df39e138127d,,"certified, local-authority",5
-Conseil Départemental de la Haute-Savoie,5c34b73c634f412639ff1b5f,,"certified, local-authority",4
-Communauté de Communes Coeur de France,655f2947859732fe0d21e791,,"certified, local-authority",4
-Région Normandie,565ebf4788ee3869aae72046,,"certified, local-authority",4
-CHARTRES METROPOLE,6399f7e3f801257af9a3b4b3,,"public-service, certified",4
-Grand Poitiers Open Data,54da1f52c751df59f7467389,,"public-service, certified",4
-Centre des monuments nationaux ,534fff5ea3a7292c64a77d40,,"public-service, certified",4
-Département des Hauts-de-Seine,544e1b0888ee38289ae1ed05,,"public-service, certified",4
-Communauté d'Agglomération Plaine Vallée,56dfe50288ee384349cfd996,,"certified, local-authority",3
-Conseil départemental de l'Isère,5bb1c7e4634f412a95dff6b9,,"certified, local-authority",3
-Loire-Atlantique Développement,534fff87a3a7292c64a77eb0,,company,3
-Ville de Rennes,534fffb9a3a7292c64a7815d,,"certified, local-authority",3
-Ville de Digne-les-Bains,534fffb8a3a7292c64a78149,,"certified, local-authority",3
-Musée des arts asiatiques Guimet,534fff97a3a7292c64a7800b,,"public-service, certified",3
-Orléans Métropole,57ed2fe9c751df236179df72,,"certified, local-authority",3
-Brest métropole,534fff5ba3a7292c64a77d19,,"certified, local-authority",3
-Ville de Grenoble,5733038988ee38472ed1b934,,"certified, local-authority",3
-Région Provence-Alpes-Côte-d'Azur,534fffa8a3a7292c64a780d2,,"certified, local-authority",3
-Métropole Européenne de Lille ,58b69c62c751df4b175dd7a4,,"certified, local-authority",2
-Le Conseil Départemental de la Mayenne,5aeab860c751df3bca98b623,,"public-service, certified",2
+Rennes Métropole en accès libre,580735be88ee3814295ff490,24350013900189,"certified, local-authority",5
+Ville de Saint-Malo,53ba4599a3a729219b7beaca,21350288300019,"certified, local-authority",5
+CHATEAUROUX METROPOLE,5bf67a998b4c417eae692920,24360032700015,"certified, local-authority",5
+Département des Alpes de Haute-Provence,62344583fb72d30231b482f5,22040001400019,"certified, local-authority",5
+Département des Côtes d'Armor,54aff788c751df39e138127d,22220001600327,"certified, local-authority",5
+Conseil Départemental de la Haute-Savoie,5c34b73c634f412639ff1b5f,22740001700074,"certified, local-authority",4
+Communauté de Communes Coeur de France,655f2947859732fe0d21e791,20003613500073,"certified, local-authority",4
+Région Normandie,565ebf4788ee3869aae72046,20005340300057,"certified, local-authority",4
+CHARTRES METROPOLE,6399f7e3f801257af9a3b4b3,24280019100015,"certified, public-service",4
+Grand Poitiers Open Data,54da1f52c751df59f7467389,24860015700015,"certified, public-service",4
+Centre des monuments nationaux ,534fff5ea3a7292c64a77d40,18004601300017,"certified, public-service",4
+Département des Hauts-de-Seine,544e1b0888ee38289ae1ed05,22920050600611,"certified, public-service",4
+Communauté d'Agglomération Plaine Vallée,56dfe50288ee384349cfd996,20005638000013,"certified, local-authority",3
+Conseil départemental de l'Isère,5bb1c7e4634f412a95dff6b9,22380001200013,"certified, local-authority",3
+Loire-Atlantique Développement,534fff87a3a7292c64a77eb0,79369870500027,company,3
+Ville de Rennes,534fffb9a3a7292c64a7815d,21350238800019,"certified, local-authority",3
+Ville de Digne-les-Bains,534fffb8a3a7292c64a78149,21040070100012,"certified, local-authority",3
+Musée des arts asiatiques Guimet,534fff97a3a7292c64a7800b,,"certified, public-service",3
+Orléans Métropole,57ed2fe9c751df236179df72,24450046800040,"certified, local-authority",3
+Brest métropole,534fff5ba3a7292c64a77d19,24290031400012,"certified, local-authority",3
+Ville de Grenoble,5733038988ee38472ed1b934,21380185500015,"certified, local-authority",3
+Région Provence-Alpes-Côte-d'Azur,534fffa8a3a7292c64a780d2,23130002100012,"certified, local-authority",3
+Métropole Européenne de Lille ,58b69c62c751df4b175dd7a4,20009320100081,"certified, local-authority",2
+Le Conseil Départemental de la Mayenne,5aeab860c751df3bca98b623,51323264500020,"certified, public-service",2
 Géo2France,5ddc086f634f41190d4c1006,,none,2
-Direction Interministérielle de la Transformation Publique,5e32dee6634f411679399abb,,"public-service, certified",2
-Institut français de recherche pour l'exploitation de la mer (IFREMER),54f461f8c751df0f88882844,,"public-service, certified",2
-Bordeaux Métropole,5b0d11f688ee382af4b18c95,,"certified, local-authority",2
-"Ministères de l'Éducation nationale, Sports et Jeunesse",534fff8fa3a7292c64a77f22,,"public-service, certified",2
-Grand Avignon,5a7ad2b1c751df27e7d1190c,,"certified, local-authority",2
-Tours Métropole Val de Loire,5cb6d4f78b4c4118e18f37d1,,"certified, local-authority",2
-Troyes Champagne Métropole,65f2e13a41f2ef9a76ff6ed5,,"public-service, certified",2
-Département de l'Hérault,59087a45c751df5a2a2c425f,,"certified, local-authority",2
-CipherBliss EI,670521e8d95df97ada2ffbd9,,company,2
-Ministère de l'Europe et des Affaires Etrangères (MEAE),534fff94a3a7292c64a77fb5,,"public-service, certified",2
-Communauté d'Agglomération Lunel Agglo,5f89b85270114f233c8b6f08,,"certified, local-authority",2
-Commune de Saint-Paul-lès-Dax,5c6303468b4c414d6ae2ebcd,,"certified, local-authority",2
-DDTM Pas-de-Calais,58aeedd088ee3820f0d3e7cd,,"public-service, certified",2
-Département du Loiret,57d90ef4c751df44fb79df72,,"certified, local-authority",2
-Département des Alpes-Maritimes,5e00c7456f444104766e92d6,,"certified, local-authority",2
-Le deuxième texte,58f7c89fc751df5bdb3b701f,,association,2
-Région Bretagne,559a4970c751df46a9a453ba,,"certified, local-authority",2
-Département des Hautes-Pyrénées,5c3f1ca2634f411d2aef4ddb,,"certified, local-authority",2
-Saint-Marcellin ,619f587a232623229cd54d68,,"certified, local-authority",2
-Musique et Danse en Loire-Atlantique,534fff98a3a7292c64a78011,,association,2
+Direction Interministérielle de la Transformation Publique,5e32dee6634f411679399abb,13002527300017,"certified, public-service",2
+Institut français de recherche pour l'exploitation de la mer (IFREMER),54f461f8c751df0f88882844,33071536800032,"certified, public-service",2
+Bordeaux Métropole,5b0d11f688ee382af4b18c95,24330031600011,"certified, local-authority",2
+"Ministères de l'Éducation nationale, Sports et Jeunesse",534fff8fa3a7292c64a77f22,11004301500012,"certified, public-service",2
+Grand Avignon,5a7ad2b1c751df27e7d1190c,24840025100158,"certified, local-authority",2
+Tours Métropole Val de Loire,5cb6d4f78b4c4118e18f37d1,24370075400035,"certified, local-authority",2
+Troyes Champagne Métropole,65f2e13a41f2ef9a76ff6ed5,20006925000013,"certified, public-service",2
+Département de l'Hérault,59087a45c751df5a2a2c425f,22340001100076,"certified, local-authority",2
+CipherBliss EI,670521e8d95df97ada2ffbd9,79942416300035,company,2
+Ministère de l'Europe et des Affaires Etrangères (MEAE),534fff94a3a7292c64a77fb5,11000601200014,"certified, public-service",2
+Communauté d'Agglomération Lunel Agglo,5f89b85270114f233c8b6f08,24340052000165,"certified, local-authority",2
+Commune de Saint-Paul-lès-Dax,5c6303468b4c414d6ae2ebcd,21400279200015,"certified, local-authority",2
+DDTM Pas-de-Calais,58aeedd088ee3820f0d3e7cd,13001036600016,"certified, public-service",2
+Département du Loiret,57d90ef4c751df44fb79df72,22450001700013,"certified, local-authority",2
+Département des Alpes-Maritimes,5e00c7456f444104766e92d6,22060001900016,"certified, local-authority",2
+Le deuxième texte,58f7c89fc751df5bdb3b701f,87864657900028,association,2
+Région Bretagne,559a4970c751df46a9a453ba,23350001600040,"certified, local-authority",2
+Département des Hautes-Pyrénées,5c3f1ca2634f411d2aef4ddb,22650001500012,"certified, local-authority",2
+Saint-Marcellin ,619f587a232623229cd54d68,21380416400019,"certified, local-authority",2
+Musique et Danse en Loire-Atlantique,534fff98a3a7292c64a78011,31454926200041,association,2
 Infolocale,534fff7ea3a7292c64a77e36,,none,2
-Ville de Bayonne,58d53c4688ee380aeea5e932,,"certified, local-authority",2
-Établissement public du musée d'Orsay et du musée de l'Orangerie,534fff74a3a7292c64a77de0,,"public-service, certified",2
-Mairie de Saint-Denis (La Réunion),5c050cfb8b4c413be36cb1c3,,"certified, local-authority",1
-Ville d'Argenton-sur-Creuse,62711de919af2df1f9141a08,,"certified, local-authority",1
-Ville de Martigues,5be9467a634f415a8620975f,,"certified, local-authority",1
-Ville de Soissons,6095142a84c45b36441511eb,,"certified, local-authority",1
-"Direction régionale de l'environnement, de l'aménagement et du logement de Bretagne",67a34f4cfe9d312c39d50e50,,"public-service, certified",1
-Ville de Tours,56d5a6d4c751df360dabb90c,,"certified, local-authority",1
-Parc naturel régional du Morvan ,5f91506e6d1d6f595ceb0ea8,,"public-service, certified",1
-wikimaginot,63aff09b9f4e6a0a9c9ecabd,,association,1
-Grand Paris Sud Est Avenir,5a997b56c751df3510b19351,,"public-service, certified",1
-Métropole Rouen Normandie,5a0467d188ee38711f65672c,,"certified, local-authority",1
-Ville de Niort,5912ddcac751df1c0de5387b,,"certified, local-authority",1
-CC Autour de Chenonceaux Bléré - Val de Cher,673c60d46977e554ea8fb462,,"certified, local-authority",1
-France Tiers-Lieux,656dac008f9e9319f0d31414,,"public-service, certified",1
-Caisse des Dépôts,5fa985066333fad0e735c985,,"public-service, certified",1
-"Ministère de l'Économie, des Finances et de l'Industrie",534fff8ea3a7292c64a77f02,,"public-service, certified",1
-DDTM Finistère,58aedac788ee387b6dcadf8e,,"public-service, certified",1
-Ville de Lanester,59d6526ac751df274a175d35,,"certified, local-authority",1
-Avignon,60f7d111a6874047ef5c56f5,,"certified, local-authority",1
-Agglo du Pays de Dreux,5bdc50dc634f412dd9a4e7a3,,"certified, local-authority",1
-La Gaude,5ba9f0bb634f416762d56c0c,,"certified, local-authority",1
+Ville de Bayonne,58d53c4688ee380aeea5e932,21640102600366,"certified, local-authority",2
+Établissement public du musée d'Orsay et du musée de l'Orangerie,534fff74a3a7292c64a77de0,,"certified, public-service",2
+Mairie de Saint-Denis (La Réunion),5c050cfb8b4c413be36cb1c3,21974011500015,"certified, local-authority",1
+Ville d'Argenton-sur-Creuse,62711de919af2df1f9141a08,21360006700085,"certified, local-authority",1
+Ville de Martigues,5be9467a634f415a8620975f,21130056100019,"certified, local-authority",1
+Ville de Soissons,6095142a84c45b36441511eb,21020695900012,"certified, local-authority",1
+"Direction régionale de l'environnement, de l'aménagement et du logement de Bretagne",67a34f4cfe9d312c39d50e50,13001000200017,"certified, public-service",1
+Ville de Tours,56d5a6d4c751df360dabb90c,21370261600011,"certified, local-authority",1
+Parc naturel régional du Morvan ,5f91506e6d1d6f595ceb0ea8,25210662000021,"certified, public-service",1
+wikimaginot,63aff09b9f4e6a0a9c9ecabd,89760129000017,association,1
+Grand Paris Sud Est Avenir,5a997b56c751df3510b19351,20005800600061,"certified, public-service",1
+Métropole Rouen Normandie,5a0467d188ee38711f65672c,20002341400101,"certified, local-authority",1
+Ville de Niort,5912ddcac751df1c0de5387b,21790191700013,"certified, local-authority",1
+CC Autour de Chenonceaux Bléré - Val de Cher,673c60d46977e554ea8fb462,24370082000117,"certified, local-authority",1
+France Tiers-Lieux,656dac008f9e9319f0d31414,13003008300021,"certified, public-service",1
+Caisse des Dépôts,5fa985066333fad0e735c985,18002002600019,"certified, public-service",1
+"Ministère de l'Économie, des Finances et de l'Industrie",534fff8ea3a7292c64a77f02,11002001300097,"certified, public-service",1
+DDTM Finistère,58aedac788ee387b6dcadf8e,13001047300010,"certified, public-service",1
+Ville de Lanester,59d6526ac751df274a175d35,21560098200262,"certified, local-authority",1
+Avignon,60f7d111a6874047ef5c56f5,21840007500014,"certified, local-authority",1
+Agglo du Pays de Dreux,5bdc50dc634f412dd9a4e7a3,20004027700010,"certified, local-authority",1
+La Gaude,5ba9f0bb634f416762d56c0c,21060065600016,"certified, local-authority",1
 Dododata,5ae685b1c751df0800b5b0f8,,none,1
-Ville de Lorient,59e05c6588ee386ef4f4f86d,,"certified, local-authority",1
-Commune de Brocas,534fff65a3a7292c64a77d76,,"certified, local-authority",1
-Département de Saône-et-Loire,534fff68a3a7292c64a77d8d,,"certified, local-authority",1
-VILLE DE FORT-DE-FRANCE,5b8ffc778b4c413ec36d73f6,,"certified, local-authority",1
-Ville de Loos,609e8e40d5d435e4228f5d8a,,"certified, local-authority",1
-Service d'Information du Gouvernement,54126af3a3a7292a9bbf14d6,,"public-service, certified",1
-Ville d'Argenteuil,5fa50f45bd278f782c7d3e31,,"certified, local-authority",1
-Saint-Louis Agglomération,5a7c19f5c751df3e55b0c321,,"certified, local-authority",1
-Le Poinçonnet,618292126ca6738c405a64a9,,"certified, local-authority",1
-"Direction régionale de l'Environnement, de l'Aménagement et du Logement de Normandie",57275bd288ee387fd5a19f12,,"public-service, certified",1
-Commune de Tartas,606d7f3644b7c6a93cf48e8d,,"certified, local-authority",1
-Commune de Chaville,5437e8c288ee387cb68f5e87,,"certified, local-authority",1
-Ville de Boulogne-Billancourt,54d8f2a4c751df1df7467389,,"certified, local-authority",1
-Entre Juine et Renarde ,619f618f38e27e934733e60c,,"certified, local-authority",1
-Ville d'Houplin-Ancoisne,609e908036c716d80d0036bd,,"certified, local-authority",1
-Ville d'Agen,5bec29278b4c412a07c7ee5f,,"certified, local-authority",1
-Société des grands projets,534fffb1a3a7292c64a7811f,,"public-service, certified",1
-Région GRAND EST,55df259f88ee386e57a46ec2,,"certified, local-authority",1
+Ville de Lorient,59e05c6588ee386ef4f4f86d,21560121200016,"certified, local-authority",1
+Commune de Brocas,534fff65a3a7292c64a77d76,21400056400010,"certified, local-authority",1
+Département de Saône-et-Loire,534fff68a3a7292c64a77d8d,22710001300688,"certified, local-authority",1
+VILLE DE FORT-DE-FRANCE,5b8ffc778b4c413ec36d73f6,21972209700017,"certified, local-authority",1
+Ville de Loos,609e8e40d5d435e4228f5d8a,21590360000017,"certified, local-authority",1
+Service d'Information du Gouvernement,54126af3a3a7292a9bbf14d6,12000101100010,"certified, public-service",1
+Ville d'Argenteuil,5fa50f45bd278f782c7d3e31,21950018800012,"certified, local-authority",1
+Saint-Louis Agglomération,5a7c19f5c751df3e55b0c321,20006605800013,"certified, local-authority",1
+Le Poinçonnet,618292126ca6738c405a64a9,21360159400012,"certified, local-authority",1
+"Direction régionale de l'Environnement, de l'Aménagement et du Logement de Normandie",57275bd288ee387fd5a19f12,13000626500016,"certified, public-service",1
+Commune de Tartas,606d7f3644b7c6a93cf48e8d,21400313900018,"certified, local-authority",1
+Commune de Chaville,5437e8c288ee387cb68f5e87,21920022700011,"certified, local-authority",1
+Ville de Boulogne-Billancourt,54d8f2a4c751df1df7467389,21920012800011,"certified, local-authority",1
+Entre Juine et Renarde ,619f618f38e27e934733e60c,24910055300059,"certified, local-authority",1
+Ville d'Houplin-Ancoisne,609e908036c716d80d0036bd,21590316200018,"certified, local-authority",1
+Ville d'Agen,5bec29278b4c412a07c7ee5f,21470001500016,"certified, local-authority",1
+Société des grands projets,534fffb1a3a7292c64a7811f,52504601700048,"certified, public-service",1
+Région GRAND EST,55df259f88ee386e57a46ec2,20005226400013,"certified, local-authority",1
 OpenEventDatabase,5759caa0c751df09eeac31a0,,none,1
-Musée d'art et d'histoire - Ville de Saint-Brieuc,57e3e31888ee38155a5ff490,,"public-service, certified",1
-"Ministère de l'Agriculture, de l'agro-alimentaire et de la souveraineté alimentaire",534fff8ca3a7292c64a77edf,,"public-service, certified",1
-Institut national de la statistique et des études économiques (Insee),534fff81a3a7292c64a77e5c,,"public-service, certified",1
-Centre National des Œuvres Universitaires et Scolaires,552e97f3c751df636537dddb,,"public-service, certified",1
-OpenAgenda,534fff60a3a7292c64a77d53,,company,1
-Arts vivants en Ille-et-Vilaine,534fff55a3a7292c64a77cdf,,"public-service, certified",1
+Musée d'art et d'histoire - Ville de Saint-Brieuc,57e3e31888ee38155a5ff490,44463926400027,"certified, public-service",1
+"Ministère de l'Agriculture, de l'agro-alimentaire et de la souveraineté alimentaire",534fff8ca3a7292c64a77edf,11007001800012,"certified, public-service",1
+Institut national de la statistique et des études économiques (Insee),534fff81a3a7292c64a77e5c,12002701600563,"certified, public-service",1
+Centre National des Œuvres Universitaires et Scolaires,552e97f3c751df636537dddb,18004401800026,"certified, public-service",1
+OpenAgenda,534fff60a3a7292c64a77d53,80934615800011,company,1
+Arts vivants en Ille-et-Vilaine,534fff55a3a7292c64a77cdf,,"certified, public-service",1
 Ouest France,534fffa2a3a7292c64a7808c,,none,1
 Association Trans Musicales,534fff56a3a7292c64a77ce3,,none,1
-Conseil régional d'Aquitaine,534fff6aa3a7292c64a77d95,,"certified, local-authority",1
-Conseil Départemental de la Gironde,534fff67a3a7292c64a77d83,,"certified, local-authority",1
+Conseil régional d'Aquitaine,534fff6aa3a7292c64a77d95,20005375900011,"certified, local-authority",1
+Conseil Départemental de la Gironde,534fff67a3a7292c64a77d83,22330001300016,"certified, local-authority",1
