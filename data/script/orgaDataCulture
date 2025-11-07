@@ -1,0 +1,62 @@
+import requests
+import pandas as pd
+
+BASE_URL = "https://www.data.gouv.fr/api/1/datasets/?tag=culture&page={}"
+
+def fetch_all_datasets():
+    page = 1
+    datasets = []
+
+    while True:
+        url = BASE_URL.format(page)
+        print(f"Fetching page {page}...")
+        response = requests.get(url).json()
+
+        data = response.get("data", [])
+        if not data:
+            break
+        
+        datasets.extend(data)
+        page += 1
+
+    return datasets
+
+
+def aggregate_by_organization(datasets):
+    org_stats = {}
+
+    for ds in datasets:
+        org = ds.get("organization")
+
+        if not org:  # skip datasets without org
+            continue
+
+        org_id = org.get("id")
+        org_name = org.get("name", "")
+
+        if org_id not in org_stats:
+            org_stats[org_id] = {"name": org_name, "count": 0}
+
+        org_stats[org_id]["count"] += 1
+
+    return org_stats
+
+
+def main():
+    datasets = fetch_all_datasets()
+    org_stats = aggregate_by_organization(datasets)
+
+    df = pd.DataFrame([
+        {"ID organisation": org_id, "Nom organisation": data["name"], "Nombre de datasets « culture »": data["count"]}
+        for org_id, data in org_stats.items()
+    ])
+
+    df = df.sort_values(by="Nombre de datasets « culture »", ascending=False)
+
+    print(df)
+    df.to_csv("datasets_culture_par_organisation.csv", index=False)
+    print("\n✅ Fichier généré : datasets_culture_par_organisation.csv")
+
+
+if __name__ == "__main__":
+    main()
