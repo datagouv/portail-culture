@@ -1,9 +1,9 @@
 name: 🏛️ Génération de la liste des organisations (tag "culture")
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # Lancement manuel
   schedule:
-    - cron: "0 3 * * 1"
+    - cron: "0 3 * * 1" # Tous les lundis à 3h du matin
 
 permissions:
   contents: write
@@ -13,36 +13,50 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ✅ Étape critique : checkout de la bonne branche
       - name: Checkout repository (branch Documentation)
         uses: actions/checkout@v4
         with:
           ref: Documentation
           fetch-depth: 0
 
+      # 🧩 Étape de debug utile si le fichier est mal référencé
       - name: Debug repository structure
         run: |
           echo "📂 Current directory: $(pwd)"
           echo "📁 Repository contents:"
           ls -R .
 
+      # 🐍 Configuration de Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+      # 📦 Installation du client datagouv
       - name: Install dependencies
-        run: pip install datagouv-client
+        run: |
+          pip install --upgrade pip
+          pip install datagouv-client
 
+      # ⚙️ Exécution du script Python
       - name: Generate organizations JSON
         run: python3 Documentation/data/script/selectOrganizationsTag.py
         env:
           TAG: culture
           OUTPUT_PATH: configs/culture/organizations-datasets.json
 
+      # 👀 Petit résumé dans les logs
+      - name: Display summary
+        run: |
+          echo "Organizations générées :"
+          jq '. | length' configs/culture/organizations-datasets.json
+
+      # 🚀 Commit et push automatiques
       - name: Commit and push changes
         run: |
           git config user.name "data.gouv.fr Bot"
           git config user.email "bot@data.gouv.fr"
           git add configs/culture/organizations-datasets.json
-          git diff --cached --quiet || git commit -m "🤖 Mise à jour auto des organisations (culture)"
+          git diff --cached --quiet || git commit -m "🤖 Mise à jour automatique des organisations (tag: culture)"
           git push
