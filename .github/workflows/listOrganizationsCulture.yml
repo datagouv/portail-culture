@@ -3,7 +3,7 @@ name: 🏛️ Update organizations list (Culture)
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 2 * * 1"  # chaque lundi à 2h UTC
+    - cron: "0 2 * * 1"
 
 permissions:
   contents: write
