@@ -22,7 +22,9 @@ jobs:
           python-version: "3.11"
 
       - name: Install DataGouv client
-        run: pip install git+https://github.com/etalab/datagouvpy.git@main
+        run: |
+          pip install --upgrade pip
+          pip install git+https://${{ secrets.GITHUB_TOKEN }}@github.com/etalab/datagouvpy.git@main
 
       - name: Generate organizations JSON
         run: python3 Documentation/data/script/selectOrganizationsTag.py
