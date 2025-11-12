@@ -10,11 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Documentation branch
         uses: actions/checkout@v4
         with:
-          ref: Documentation   # ✅ clone la bonne branche
+          repository: datagouv/portail-culture   # 👈 Assure qu’on clone ton dépôt
+          ref: Documentation                    # 👈 Clone explicitement la branche Documentation
           fetch-depth: 0
+
+      - name: Check files (debug)
+        run: |
+          echo "📁 Current working directory: $(pwd)"
+          ls -R | head -n 100
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,6 +34,9 @@ jobs:
       - name: Run Culture Organizations script
         run: |
           python Documentation/data/script/selectOrganizationsTag.py
+        env:
+          TAG: culture
+          OUTPUT_PATH: Documentation/data/organizations-datasets.json
 
       - name: Configure Git
         run: |
