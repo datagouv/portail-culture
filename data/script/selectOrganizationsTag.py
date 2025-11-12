@@ -4,7 +4,7 @@ import json
 from datagouv import Client, Dataset, Organization
 
 TAG = os.getenv("TAG", "culture")
-OUTPUT_PATH = os.getenv("OUTPUT_PATH", "organizations-datasets.json")
+OUTPUT_PATH = os.getenv("OUTPUT_PATH", "data/organizations-datasets-tag.json")
 
 EXCLUDED_ORG_IDS = {
     "534fff8ca3a7292c64a77edf",  # Ministère de l'Agriculture
