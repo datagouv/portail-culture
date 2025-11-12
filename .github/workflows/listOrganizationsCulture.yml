@@ -3,7 +3,7 @@ name: 🏛️ Génération de la liste des organisations (tag "culture")
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3 * * 1" # Tous les lundis à 3h du matin
+    - cron: "0 3 * * 1"
 
 permissions:
   contents: write
@@ -13,49 +13,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ✅ Clone la bonne branche (Documentation)
       - name: Checkout repository (branch Documentation)
         uses: actions/checkout@v4
         with:
           ref: Documentation
+          fetch-depth: 0
 
-      # 🧩 Étape de debug utile si le fichier n'est pas trouvé
       - name: Debug repository structure
         run: |
           echo "📂 Current directory: $(pwd)"
           echo "📁 Repository contents:"
           ls -R .
 
-      # 🐍 Configure Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      # 📦 Installe la dépendance
       - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install datagouv-client
+        run: pip install datagouv-client
 
-      # ⚙️ Exécute le script Python pour générer le JSON
       - name: Generate organizations JSON
         run: python3 Documentation/data/script/selectOrganizationsTag.py
         env:
           TAG: culture
           OUTPUT_PATH: configs/culture/organizations-datasets.json
 
-      # 👀 Affiche un résumé rapide dans les logs
-      - name: Display summary
-        run: |
-          echo "Organizations generated:"
-          cat configs/culture/organizations-datasets.json | jq '. | length'
-
-      # 🚀 Commit et push automatiques
       - name: Commit and push changes
         run: |
           git config user.name "data.gouv.fr Bot"
           git config user.email "bot@data.gouv.fr"
           git add configs/culture/organizations-datasets.json
-          git diff --cached --quiet || git commit -m "🤖 Mise à jour automatique des organisations (tag: culture)"
+          git diff --cached --quiet || git commit -m "🤖 Mise à jour auto des organisations (culture)"
           git push
