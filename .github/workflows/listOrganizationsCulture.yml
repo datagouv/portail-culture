@@ -1,0 +1,45 @@
+name: 🏛️ Update organizations list (Culture)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * 1"  # chaque lundi à 2h UTC
+
+permissions:
+  contents: write
+
+jobs:
+  update-organizations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install datagouv
+
+      - name: Generate organizations JSON
+        run: python3 Documentation/data/script/selectOrganizationsTag.py
+        env:
+          TAG: culture
+          OUTPUT_PATH: configs/culture/organizations-datasets.json
+          # DATAGOUV_BASE_URL: https://demo.data.gouv.fr/  # optionnel
+
+      - name: Display summary
+        run: |
+          echo "Organizations generated:"
+          cat configs/culture/organizations-datasets.json | jq '. | length'
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "data.gouv.fr Bot"
+          git config user.email "bot@data.gouv.fr"
+          git add configs/culture/organizations-datasets.json
+          git diff --cached --quiet || git commit -m "🤖 Update organizations list (auto)"
+          git push
