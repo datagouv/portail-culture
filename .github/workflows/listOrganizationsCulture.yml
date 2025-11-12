@@ -13,8 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository (branch Documentation)
         uses: actions/checkout@v4
+        with:
+          ref: Documentation
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -22,9 +24,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install datagouv-client
+        run: pip install datagouv-client
 
       - name: Generate organizations JSON
         run: python3 Documentation/data/script/selectOrganizationsTag.py
