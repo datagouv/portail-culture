@@ -3,7 +3,7 @@ name: 🏛️ Update organizations list (Culture)
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 2 * * 1"
+    - cron: "0 2 * * 1"  # chaque lundi à 2h UTC
 
 permissions:
   contents: write
@@ -21,13 +21,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install DataGouv client
+      - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install git+https://github.com/etalab/datagouvpy.git@main
-
-      - name: Verify datagouv installation
-        run: python -c "import datagouv; print('✅ datagouv version OK')"
+          pip install datagouv-client
 
       - name: Generate organizations JSON
         run: python3 Documentation/data/script/selectOrganizationsTag.py
