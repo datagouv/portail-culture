@@ -1,22 +1,18 @@
-name: 🏛️ Update organizations list (Culture)
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 2 * * 1"
-
-permissions:
-  contents: write
-
 jobs:
   update-organizations:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository (branch Documentation)
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           ref: Documentation
+
+      - name: Debug repository structure
+        run: |
+          echo "📂 Current directory: $(pwd)"
+          echo "📁 Listing contents:"
+          ls -R .
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,11 +27,6 @@ jobs:
         env:
           TAG: culture
           OUTPUT_PATH: configs/culture/organizations-datasets.json
-
-      - name: Display summary
-        run: |
-          echo "Organizations generated:"
-          cat configs/culture/organizations-datasets.json | jq '. | length'
 
       - name: Commit and push changes
         run: |
