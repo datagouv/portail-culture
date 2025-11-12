@@ -21,15 +21,14 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
-        run: pip install datagouv
+      - name: Install DataGouv client
+        run: pip install git+https://github.com/etalab/datagouvpy.git@main
 
       - name: Generate organizations JSON
         run: python3 Documentation/data/script/selectOrganizationsTag.py
         env:
           TAG: culture
           OUTPUT_PATH: configs/culture/organizations-datasets.json
-          # DATAGOUV_BASE_URL: https://demo.data.gouv.fr/  # optionnel
 
       - name: Display summary
         run: |
