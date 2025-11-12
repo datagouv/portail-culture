@@ -1,9 +1,9 @@
-name: 🏛️ Génération de la liste des organisations (tag "culture")
+name: 🏛️ Génération de la liste des organisations (tag culture)
 
 on:
-  workflow_dispatch:  # Lancement manuel
+  workflow_dispatch:
   schedule:
-    - cron: "0 3 * * 1" # Tous les lundis à 3h du matin
+    - cron: "0 3 * * 1" # Tous les lundis à 3h
 
 permissions:
   contents: write
@@ -13,50 +13,51 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ✅ Étape critique : checkout de la bonne branche
-      - name: Checkout repository (branch Documentation)
+      # 🧭 1️⃣ Clone la branche Documentation
+      - name: Checkout Documentation branch
         uses: actions/checkout@v4
         with:
           ref: Documentation
           fetch-depth: 0
 
-      # 🧩 Étape de debug utile si le fichier est mal référencé
+      # 🧩 2️⃣ Étape de debug utile
       - name: Debug repository structure
         run: |
           echo "📂 Current directory: $(pwd)"
           echo "📁 Repository contents:"
           ls -R .
 
-      # 🐍 Configuration de Python
+      # 🐍 3️⃣ Installe Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      # 📦 Installation du client datagouv
+      # 📦 4️⃣ Installe le client DataGouv
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install datagouv-client
 
-      # ⚙️ Exécution du script Python
+      # ⚙️ 5️⃣ Exécute le script pour générer le JSON
       - name: Generate organizations JSON
         run: python3 Documentation/data/script/selectOrganizationsTag.py
         env:
           TAG: culture
-          OUTPUT_PATH: configs/culture/organizations-datasets.json
+          OUTPUT_PATH: Documentation/data/organizations-datasets.json
 
-      # 👀 Petit résumé dans les logs
-      - name: Display summary
+      # 👀 6️⃣ Vérifie le résultat dans les logs
+      - name: Display result
         run: |
-          echo "Organizations générées :"
-          jq '. | length' configs/culture/organizations-datasets.json
+          echo "✅ Organizations file generated:"
+          ls -lh Documentation/data/organizations-datasets.json
+          jq '. | length' Documentation/data/organizations-datasets.json
 
-      # 🚀 Commit et push automatiques
+      # 🚀 7️⃣ Commit et push automatique du JSON mis à jour
       - name: Commit and push changes
         run: |
           git config user.name "data.gouv.fr Bot"
           git config user.email "bot@data.gouv.fr"
-          git add configs/culture/organizations-datasets.json
-          git diff --cached --quiet || git commit -m "🤖 Mise à jour automatique des organisations (tag: culture)"
+          git add Documentation/data/organizations-datasets.json
+          git diff --cached --quiet || git commit -m "🤖 Mise à jour auto des organisations (tag: culture)"
           git push
