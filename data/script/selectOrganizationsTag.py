@@ -4,17 +4,14 @@ import json
 from datagouv import Client, Dataset, Organization
 
 TAG = os.getenv("TAG", "culture")
-OUTPUT_PATH = os.getenv("OUTPUT_PATH", "data/organizations-datasets-tag.json")
+OUTPUT_PATH = os.getenv("OUTPUT_PATH", "Documentation/data/organizations-datasets.json")
 
 EXCLUDED_ORG_IDS = {
     "534fff8ca3a7292c64a77edf",  # Ministère de l'Agriculture
-
 }
 
 def should_exclude(org):
-    if org.id in EXCLUDED_ORG_IDS:
-        return True
-    return False
+    return org.id in EXCLUDED_ORG_IDS
 
 client = Client()
 
@@ -57,7 +54,6 @@ def main():
         json.dump(sorted_organizations, f, ensure_ascii=False, indent=2)
 
     print(f"✓ {len(sorted_organizations)} organisations exportées dans {OUTPUT_PATH}")
-
 
 if __name__ == "__main__":
     main()
